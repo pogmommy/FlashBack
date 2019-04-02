@@ -52,7 +52,7 @@ NSString *backupNameSelected;
             NSLog(@"Running NSTask");
             
             NSTask *createTask = [[NSTask alloc] init];
-            [createTask setLaunchPath:@"/usr/bin/bash"];
+            [createTask setLaunchPath:@"/bin/bash"];
             [createTask setArguments:@[ @"FBCreate", newBackupName]];
             [createTask launch];
             [createTask waitUntilExit];
@@ -137,7 +137,7 @@ NSString *backupNameSelected;
                              //RUN RESTORE SCRIPT
                              
                              NSTask *restoreTask = [[NSTask alloc] init];
-                             [restoreTask setLaunchPath:@"/usr/bin/bash"];
+                             [restoreTask setLaunchPath:@"/bin/bash"];
                              [restoreTask setArguments:@[ @"FBRestore", backupNameSelected]];
                              [restoreTask launch];
                              
@@ -206,13 +206,13 @@ NSString *backupNameSelected;
                              [updateBackupAlert dismissViewControllerAnimated:YES completion:nil];
                              
                              NSTask *deleteTask = [[NSTask alloc] init];
-                             [deleteTask setLaunchPath:@"/usr/bin/bash"];
+                             [deleteTask setLaunchPath:@"/bin/bash"];
                              [deleteTask setArguments:@[ @"FBDelete", backupNameSelected]];
                              [deleteTask launch];
                              [deleteTask waitUntilExit];
                              
                              NSTask *createTask = [[NSTask alloc] init];
-                             [createTask setLaunchPath:@"/usr/bin/bash"];
+                             [createTask setLaunchPath:@"/bin/bash"];
                              [createTask setArguments:@[ @"FBCreate", backupNameSelected]];
                              [createTask launch];
                              [createTask waitUntilExit];
@@ -277,7 +277,7 @@ NSString *backupNameSelected;
                              [packageBackupAlert dismissViewControllerAnimated:YES completion:nil];
                              
                              NSTask *packageTask = [[NSTask alloc] init];
-                             [packageTask setLaunchPath:@"/usr/bin/bash"];
+                             [packageTask setLaunchPath:@"/bin/bash"];
                              [packageTask setArguments:@[ @"FBPackage", backupNameSelected]];
                              [packageTask launch];
                              [packageTask waitUntilExit];
@@ -359,7 +359,7 @@ NSString *backupNameSelected;
                              //RUN RESTORE SCRIPT
                              
                              NSTask *packageTask = [[NSTask alloc] init];
-                             [packageTask setLaunchPath:@"/usr/bin/bash"];
+                             [packageTask setLaunchPath:@"/bin/bash"];
                              [packageTask setArguments:@[ @"FBUnpackage"]];
                              [packageTask launch];
                              [packageTask waitUntilExit];
@@ -502,7 +502,7 @@ NSString *backupNameSelected;
                          {
                              
                              NSTask *deleteTask = [[NSTask alloc] init];
-                             [deleteTask setLaunchPath:@"/usr/bin/bash"];
+                             [deleteTask setLaunchPath:@"/bin/bash"];
                              [deleteTask setArguments:@[ @"FBDelete", backupNameSelected]];
                              [deleteTask launch];
                              [deleteTask waitUntilExit];
