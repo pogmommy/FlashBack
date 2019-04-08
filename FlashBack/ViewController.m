@@ -300,7 +300,7 @@ NSString *backupNameSelected;
                              
                              UIAlertController * finishedPackageAlert=   [UIAlertController
                                                                           alertControllerWithTitle:@"Packaging Complete"
-                                                                          message:@"The package can be found in [/User/Documents/FlashBack/FlashBackDEBs/]."
+                                                                          message:@"The package can be found in [/User/Documents/FlashBackDEBs/]."
                                                                           preferredStyle:UIAlertControllerStyleAlert];
                              
                              
@@ -339,7 +339,7 @@ NSString *backupNameSelected;
     
     UIAlertController * tutorialAlert=   [UIAlertController
                                           alertControllerWithTitle:@"Help"
-                                          message:@"Create Backup: This will prompt you to enter a name for the backup which will be displayed in the box above.\n\nRestore: This will revert your settings, wallpaper, and Icon Layout to the selected setup.\n\nUpdate: This will overwrite the selected backup to cleanly update it.\n\nPackage: This will generate a package in ZIP format for you to share or back up for later.\n\nUnpackage: This will install the aforementioned ZIP packages to be used by FlashBack.\n\nDelete: This will delete the selected backup. These backups cannot be recovered!"
+                                          message:@"Create Backup: This will prompt you to enter a name for the backup which will be displayed in the box above.\n\nRestore: This will revert your settings, wallpaper, and Icon Layout to the selected setup.\n\nUpdate: This will overwrite the selected backup to cleanly update it.\n\nPackage: This will generate a package in DEB format for you to share or back up for later, including installed tweaks.\n\nDelete: This will delete the selected backup. These backups cannot be recovered!"
                                           preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* ok = [UIAlertAction
@@ -352,7 +352,7 @@ NSString *backupNameSelected;
                              
                              UIAlertController * infoAlert=   [UIAlertController
                                                                alertControllerWithTitle:@"Known issues"
-                                                               message:@"\nScrolling through the picker view with no backups will crash the app.\n"
+                                                               message:@"\nScrolling through the picker view with no backups will crash the app.\n\nFor beg reports, please contact me via Twitter or the email available in the next pop-up dialogue."
                                                                preferredStyle:UIAlertControllerStyleAlert];
                              
                              UIAlertAction* okay = [UIAlertAction
