@@ -10,7 +10,7 @@
 #include <spawn.h>
 #include <signal.h>
 #include "NSTask.h"
-
+#import "UIImage+Private.h"
 
 @interface ViewController ()
 
@@ -21,7 +21,6 @@ NSString *_backupDirectory;
 NSMutableString *selectedBackupImageURL;
 NSMutableString *selectedBackupURL;
 NSString *backupNameSelected;
-
 
 @implementation ViewController
 
@@ -533,11 +532,14 @@ NSString *backupNameSelected;
     selectedBackupImageURL=selectedBackupURL;
     
     [selectedBackupImageURL appendString: @"/SBFolder/LockBackgroundThumbnail.jpg"];
+    //[selectedBackupImageURL appendString: @"/SBFolder/LockBackground.cpbitmap"];
     NSLog(@"%@", selectedBackupImageURL);
-    
     NSURL *url = [NSURL fileURLWithPath:selectedBackupImageURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
+    
     selectedBackupImage.image = [UIImage imageWithData:data];
+    //selectedBackupImage.image = [UIImage imageWithContentsOfCPBitmapFile:selectedBackupImageURL flags:kNilOptions];
+        
     
     NSLog(@"%@", backupNameSelected);
     }

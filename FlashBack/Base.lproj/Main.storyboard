@@ -21,7 +21,7 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgimage" translatesAutoresizingMaskIntoConstraints="NO" id="Xdq-a9-Vkk">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                             </imageView>
-                            <visualEffectView opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3iZ-tO-enL">
+                            <visualEffectView opaque="NO" alpha="0.75" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3iZ-tO-enL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="n8w-C8-2Xw">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -32,6 +32,11 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X4R-sr-2s9">
                                 <rect key="frame" x="16" y="221" width="343" height="345"/>
                                 <color key="backgroundColor" white="1" alpha="0.25035761443661969" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="P62-Ty-VDg"/>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="O8T-KD-yad"/>
@@ -46,6 +51,11 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="Restore"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="restoreBackup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JqV-B8-5zg"/>
                                 </connections>
@@ -55,6 +65,11 @@
                                 <color key="backgroundColor" white="1" alpha="0.25035761439999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="Update"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="updateBackup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jz6-Fn-uAo"/>
                                 </connections>
@@ -66,6 +81,11 @@
                                 <state key="normal" title="Delete">
                                     <color key="titleColor" red="1" green="0.084393614217168067" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="deleteBackup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IGQ-c1-zGW"/>
                                 </connections>
@@ -78,6 +98,11 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="Create Backup"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="createBackup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HAA-of-GPp"/>
                                 </connections>
@@ -90,6 +115,11 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="31"/>
                                 <state key="normal" title="Package"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="15"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="packageBackup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BGU-Dg-Yyu"/>
                                 </connections>
