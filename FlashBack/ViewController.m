@@ -21,8 +21,44 @@ NSString *_backupDirectory;
 NSMutableString *selectedBackupImageURL;
 NSMutableString *selectedBackupURL;
 NSString *backupNameSelected;
+int itFuckingCounts = 0;
+
+//CFArrayRef CPBitmapCreateImagesFromData(CFDataRef cpbitmap, void*, int, void*);
 
 @implementation ViewController
+
+
+- (IBAction)secretButton:(id)sender {
+    
+    itFuckingCounts++;
+    
+    if (itFuckingCounts==13) {
+    
+    UIAlertController * secretButtonAlert=   [UIAlertController
+                                                alertControllerWithTitle:@"Secret found!"
+                                                message:@"Thanks for supporting FlashBack, and congratulations on finding the secret button!"
+                                                preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction
+                         actionWithTitle:@":)"
+                         style:UIAlertActionStyleDefault
+                         handler:^(UIAlertAction * action)
+                         {
+                             NSURL *myPicURL = [NSURL fileURLWithPath:@"/Library/FlashBack/.mg.png"];
+                             NSLog(@"%@", myPicURL);
+                             NSData *myPicData = [NSData dataWithContentsOfURL:myPicURL];
+                             selectedBackupImage.image = [UIImage imageWithData:myPicData];
+                             
+                             [secretButtonAlert dismissViewControllerAnimated:YES completion:nil];
+                             
+                         }];
+    [secretButtonAlert addAction:ok];
+    
+    [self presentViewController:secretButtonAlert animated:YES completion:nil];
+    
+    }
+}
+
 
 
 - (IBAction)createBackup:(id)sender {
@@ -351,7 +387,7 @@ NSString *backupNameSelected;
                              
                              UIAlertController * infoAlert=   [UIAlertController
                                                                alertControllerWithTitle:@"Known issues"
-                                                               message:@"\nScrolling through the picker view with no backups will crash the app.\n\nFor beg reports, please contact me via Twitter or the email available in the next pop-up dialogue."
+                                                               message:@"\nScrolling through the picker view with no backups will crash the app.\n\nSometimes, wallpapers are incorrectly applied after restoring a backup\n\nFor bug reports, please contact me via Twitter or the email available in the next pop-up dialogue."
                                                                preferredStyle:UIAlertControllerStyleAlert];
                              
                              UIAlertAction* okay = [UIAlertAction
@@ -495,6 +531,7 @@ NSString *backupNameSelected;
     
     //_backupFolderArray = @[@"one",@"two",@"three"];
     _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/Library/FlashBack/Backups/" error:nil];
+    NSLog(@"%d", itFuckingCounts);
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
@@ -531,12 +568,17 @@ NSString *backupNameSelected;
     
     selectedBackupImageURL=selectedBackupURL;
     
-    [selectedBackupImageURL appendString: @"/SBFolder/LockBackgroundThumbnail.jpg"];
+     [selectedBackupImageURL appendString: @"/SBFolder/LockBackgroundThumbnail.jpg"];
     //[selectedBackupImageURL appendString: @"/SBFolder/LockBackground.cpbitmap"];
     NSLog(@"%@", selectedBackupImageURL);
     NSURL *url = [NSURL fileURLWithPath:selectedBackupImageURL];
     NSData *data = [NSData dataWithContentsOfURL:url];
     
+    /*NSData *homeData = [NSData dataWithContentsOfFile:selectedBackupImageURL];
+    CFArrayRef homeArrayRef = CPBitmapCreateImagesFromData((__bridge CFDataRef)homeData, NULL, 1, NULL);
+    NSArray *homeArray = (__bridge NSArray*)homeArrayRef;
+    UIImage *homeWallpaper = [[UIImage alloc] initWithCGImage:(__bridge CGImageRef)(homeArray[0])];*/
+        
     selectedBackupImage.image = [UIImage imageWithData:data];
     //selectedBackupImage.image = [UIImage imageWithContentsOfCPBitmapFile:selectedBackupImageURL flags:kNilOptions];
         
