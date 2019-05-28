@@ -323,9 +323,15 @@ int itFuckingCounts = 0;
                          handler:^(UIAlertAction * action)
                          {
                              
-                             //RUN RESTORE SCRIPT
+                             UIAlertController * packageBackupWait=   [UIAlertController
+                                                                        alertControllerWithTitle:@"Backup DEB"
+                                                                        message:@"The backup is being created. Please Wait. This dialogue will will be dismissed when finished. The  DEB can be found in [/User/Documents/FlashBackDEBs]"
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
                              
                              [packageBackupAlert dismissViewControllerAnimated:YES completion:nil];
+                             
+                             [self presentViewController:packageBackupWait animated:YES completion:nil];
+                             
                              
                              NSTask *packageTask = [[NSTask alloc] init];
                              [packageTask setLaunchPath:@"/bin/bash"];
@@ -333,25 +339,8 @@ int itFuckingCounts = 0;
                              [packageTask launch];
                              [packageTask waitUntilExit];
                              
-                             UIAlertController * finishedPackageAlert=   [UIAlertController
-                                                                          alertControllerWithTitle:@"Packaging Complete"
-                                                                          message:@"The package can be found in [/User/Documents/FlashBackDEBs/]."
-                                                                          preferredStyle:UIAlertControllerStyleAlert];
                              
-                             
-                             
-                             UIAlertAction* ok = [UIAlertAction
-                                                  actionWithTitle:@"ok"
-                                                  style:UIAlertActionStyleDefault
-                                                  handler:^(UIAlertAction * action)
-                                                  {
-                                                      [finishedPackageAlert dismissViewControllerAnimated:YES completion:nil];
-                                                      
-                                                  }];
-                             
-                             [finishedPackageAlert addAction:ok];
-                             
-                             [self presentViewController:finishedPackageAlert animated:YES completion:nil];
+                             [packageBackupWait dismissViewControllerAnimated:YES completion:nil];
                              
                          }];
     UIAlertAction* cancel = [UIAlertAction
