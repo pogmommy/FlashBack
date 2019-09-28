@@ -50,7 +50,7 @@ NSString *backupNameSelected;
     }
     else{
 
-        UIAlertController *createBackupAlert = [UIAlertController alertControllerWithTitle:@"Enter the Backup Name" message:@"Please do not use special symbols. Use only letters and numbers, no spaces. If you have issues with the wallpaper not being properly applied after restoring to a backup, install autowall from\n https://jb365.github.io/" preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertController *createBackupAlert = [UIAlertController alertControllerWithTitle:@"Enter the Backup Name" message:@"Please do not use special symbols. Use only letters and numbers, no spaces." preferredStyle:UIAlertControllerStyleAlert];
         [createBackupAlert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
             textField.placeholder = @"Backup Name";
             textField.secureTextEntry = NO;
@@ -372,7 +372,7 @@ NSString *backupNameSelected;
     
     UIAlertController * tutorialAlert=   [UIAlertController
                                           alertControllerWithTitle:@"Help"
-                                          message:@"Create Backup: This will prompt you to enter a name for the backup which will be displayed in the box above.\n\nRestore: This will revert your settings, wallpaper, and Icon Layout to the selected setup.\n\nUpdate: This will overwrite the selected backup to cleanly update it.\n\nPackage: This will generate a package in DEB format for you to share or back up for later, including installed tweaks.\n\nDelete: This will delete the selected backup. These backups cannot be recovered!"
+                                          message:@"Create Backup (+): This will prompt you to enter a name for the backup which will be displayed in the box above.\n\nRestore (↺): This will revert your settings, wallpaper, and Icon Layout to the selected setup.\n\nUpdate (↑↓): This will overwrite the selected backup to cleanly update it.\n\nPackage (File Icon): This will generate a package in DEB format for you to share or back up for later, including installed tweaks.\n\nDelete (Trash Icon): This will delete the selected backup. These backups cannot be recovered!"
                                           preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* ok = [UIAlertAction
@@ -385,7 +385,7 @@ NSString *backupNameSelected;
                              
                              UIAlertController * infoAlert=   [UIAlertController
                                                                alertControllerWithTitle:@"Known issues"
-                                                               message:@"\nFor bug reports, please contact me via Twitter or the email available in the next pop-up dialogue.\n\nCredit for the DRM goes to @kushdabush on twitter"
+                                                               message:@"\nFor bug reports, please contact me via Twitter or the email available in the next pop-up dialogue.\n\nIf you have issues with the wallpaper, apply your wallpaper with AutoWall from https://jb365.github.io/ and update the backup.\n\nCredit for the DRM goes to @kushdabush on twitter"
                                                                preferredStyle:UIAlertControllerStyleAlert];
                              
                              UIAlertAction* okay = [UIAlertAction
@@ -533,7 +533,6 @@ NSString *backupNameSelected;
     
     // MARK: DRM From @Kushdabush, commenting out for testing
     //pulled from https://github.com/DomienF/kushy-drm/blob/master/Tweak.xm
-    /*
     
     UIAlertController * failedDRMAlert=   [UIAlertController
                                            alertControllerWithTitle:@"FlashBack appears to be pirated :("
@@ -546,7 +545,7 @@ NSString *backupNameSelected;
                                   handler:^(UIAlertAction * action)
                                   {
                                       [failedDRMAlert dismissViewControllerAnimated:YES completion:nil];
-                                      //exit(0);
+                                      exit(0);
                                   }];
     
     UIAlertController * trialNoticeAlert=   [UIAlertController
@@ -584,7 +583,6 @@ NSString *backupNameSelected;
             });
         }
     }
-    */
     
         trial = NO;
 }
@@ -596,7 +594,7 @@ NSString *backupNameSelected;
         
         UIAlertController * emptyArrayAlert=   [UIAlertController
                                                 alertControllerWithTitle:@"Let's start by making a backup!"
-                                                message:@"Press 'Create Backup' to get started!"
+                                                message:@"Press 'Create Backup (+)' to get started!"
                                                 preferredStyle:UIAlertControllerStyleAlert];
         
         UIAlertAction* ok = [UIAlertAction
