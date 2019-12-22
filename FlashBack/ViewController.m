@@ -17,6 +17,12 @@
 @end
 
 BOOL trial;
+BOOL tweaksEnabled = YES;
+BOOL iconsEnabled = YES;
+BOOL wallpaperEnabled = YES;
+NSString *stringTweaksEnabled;
+NSString *stringIconsEnabled;
+NSString *stringWallpaperEnabled;
 NSArray *_backupFolderArray;
 NSString *_backupDirectory;
 NSMutableString *selectedBackupImageURL;
@@ -26,29 +32,34 @@ NSString *backupNameSelected;
 
 @implementation ViewController
 
-- (IBAction)createBackup:(id)sender {
+- (IBAction)tweaksSwitch:(id)sender {
     
-    if(([_backupFolderArray count] >= 1) && (trial == YES)){
-        
-        UIAlertController * noMoreBackupsAlert =   [UIAlertController
-                                                    alertControllerWithTitle:@"Maximum Backups Reached"
-                                                    message:@"The free trial of FlashBack only allows one saved setup. Purchase the full version on PackIX for $1.50 to make more!"
-                                                    preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction* ok = [UIAlertAction
-                             actionWithTitle:@"ok"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action)
-                             {
-                                 [noMoreBackupsAlert dismissViewControllerAnimated:YES completion:nil];
-                                 
-                             }];
-        
-        [noMoreBackupsAlert addAction:ok];
-        [self presentViewController:noMoreBackupsAlert animated:YES completion:nil];
-        
-    }
-    else{
+    BOOL tweaksEnabled = [sender isOn];
+    NSString *stringTweaksEnabled = tweaksEnabled == YES ? @"YES" : @"NO";
+    NSLog(@"%@", stringTweaksEnabled);
+    
+}
+
+- (IBAction)iconsSwitch:(id)sender {
+    
+    BOOL iconsEnabled = [sender isOn];
+    NSString *stringIconsEnabled = iconsEnabled == YES ? @"YES" : @"NO";
+    NSLog(@"%@", stringIconsEnabled);
+    
+}
+
+- (IBAction)wallpaperSwitch:(id)sender {
+    
+    BOOL wallpaperEnabled = [sender isOn];
+    NSString *stringWallpaperEnabled = wallpaperEnabled == YES ? @"YES" : @"NO";
+    NSLog(@"%@", stringWallpaperEnabled);
+    
+    //NSLog(@"wallpaperEnabled:" );
+}
+
+
+
+- (IBAction)createBackup:(id)sender {
 
         UIAlertController *createBackupAlert = [UIAlertController alertControllerWithTitle:@"Enter the Backup Name" message:@"Please do not use special symbols. Use only letters and numbers, no spaces." preferredStyle:UIAlertControllerStyleAlert];
         [createBackupAlert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
@@ -69,7 +80,7 @@ NSString *backupNameSelected;
                 
                 NSTask *createTask = [[NSTask alloc] init];
                 [createTask setLaunchPath:@"/bin/bash"];
-                [createTask setArguments:@[ @"FBCreate", newBackupName]];
+                [createTask setArguments:@[ @"FBCreate", newBackupName, stringTweaksEnabled, stringIconsEnabled, stringWallpaperEnabled]];
                 [createTask launch];
                 [createTask waitUntilExit];
                 
@@ -110,7 +121,6 @@ NSString *backupNameSelected;
         }];
         [createBackupAlert addAction:cancelAction];
         [self presentViewController:createBackupAlert animated:YES completion:nil];
-    }
 }
 
 - (IBAction)restoreBackup:(id)sender {
@@ -153,7 +163,7 @@ NSString *backupNameSelected;
                                  
                                  NSTask *restoreTask = [[NSTask alloc] init];
                                  [restoreTask setLaunchPath:@"/bin/bash"];
-                                 [restoreTask setArguments:@[ @"FBRestore", backupNameSelected]];
+                                 [restoreTask setArguments:@[ @"FBRestore", backupNameSelected, stringTweaksEnabled, stringIconsEnabled, stringWallpaperEnabled]];
                                  [restoreTask launch];
                                  
                                  UIAlertController * finishedRestoreAlert=   [UIAlertController
@@ -228,7 +238,7 @@ NSString *backupNameSelected;
                                  
                                  NSTask *createTask = [[NSTask alloc] init];
                                  [createTask setLaunchPath:@"/bin/bash"];
-                                 [createTask setArguments:@[ @"FBCreate", backupNameSelected]];
+                                 [createTask setArguments:@[ @"FBCreate", backupNameSelected, stringTweaksEnabled, stringIconsEnabled, stringWallpaperEnabled]];
                                  [createTask launch];
                                  [createTask waitUntilExit];
                                  
@@ -536,7 +546,7 @@ NSString *backupNameSelected;
     
     UIAlertController * failedDRMAlert=   [UIAlertController
                                            alertControllerWithTitle:@"FlashBack appears to be pirated :("
-                                           message:@"Please support small devs and purchase software. If you're unable to, please contact me, I'm happy to work things out! If you want to test it out, check out the trial version!"
+                                           message:@"For your own safety, download FlashBack from the official source! If you're seeing this, then it means that whoever is distributing this copy is either sharing a ripped version that is potentially dangerous, or they have forgotten to remove this warning for yours, and their own protection."
                                            preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* failedDRMOk = [UIAlertAction
@@ -545,7 +555,7 @@ NSString *backupNameSelected;
                                   handler:^(UIAlertAction * action)
                                   {
                                       [failedDRMAlert dismissViewControllerAnimated:YES completion:nil];
-                                      exit(0);
+                                      //exit(0);
                                   }];
     
     UIAlertController * trialNoticeAlert=   [UIAlertController
