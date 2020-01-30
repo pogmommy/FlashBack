@@ -11,55 +11,21 @@
 #include <signal.h>
 #include "NSTask.h"
 #import "UIImage+Private.h"
+#import "UIBackgroundStyle.h"
+#import "UINavigationItem+LargeAccessoryView.h"
+#import "globalVars.h"
 
-@interface ViewController ()
-
-@end
 
 BOOL trial;
-BOOL tweaksEnabled = YES;
-BOOL iconsEnabled = YES;
-BOOL wallpaperEnabled = YES;
-NSString *stringTweaksEnabled;
-NSString *stringIconsEnabled;
-NSString *stringWallpaperEnabled;
 NSArray *_backupFolderArray;
 NSString *_backupDirectory;
 NSMutableString *selectedBackupImageURL;
 NSMutableString *selectedBackupURL;
 NSString *backupNameSelected;
 
-
 @implementation ViewController
 
-- (IBAction)tweaksSwitch:(id)sender {
-    
-    BOOL tweaksEnabled = [sender isOn];
-    NSString *stringTweaksEnabled = tweaksEnabled == YES ? @"YES" : @"NO";
-    NSLog(@"%@", stringTweaksEnabled);
-    
-}
-
-- (IBAction)iconsSwitch:(id)sender {
-    
-    BOOL iconsEnabled = [sender isOn];
-    NSString *stringIconsEnabled = iconsEnabled == YES ? @"YES" : @"NO";
-    NSLog(@"%@", stringIconsEnabled);
-    
-}
-
-- (IBAction)wallpaperSwitch:(id)sender {
-    
-    BOOL wallpaperEnabled = [sender isOn];
-    NSString *stringWallpaperEnabled = wallpaperEnabled == YES ? @"YES" : @"NO";
-    NSLog(@"%@", stringWallpaperEnabled);
-    
-    //NSLog(@"wallpaperEnabled:" );
-}
-
-
-
-- (IBAction)createBackup:(id)sender {
+- (void)createBackup:(id)sender {
 
         UIAlertController *createBackupAlert = [UIAlertController alertControllerWithTitle:@"Enter the Backup Name" message:@"Please do not use special symbols. Use only letters and numbers, no spaces." preferredStyle:UIAlertControllerStyleAlert];
         [createBackupAlert addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
@@ -528,11 +494,39 @@ NSString *backupNameSelected;
     
 }
 
+
+- (UIStatusBarStyle)preferredStatusBarStyle {
+    
+        return UIStatusBarStyleLightContent;
+    }
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (@available(iOS 13.0, *)) {
+         API_AVAILABLE(ios(13.0))
+         UIView *statusBar = [[UIView alloc]initWithFrame:[UIApplication sharedApplication].keyWindow.windowScene.statusBarManager.statusBarFrame];
+         statusBar.backgroundColor = [UIColor darkTextColor];
+         [[UIApplication sharedApplication].keyWindow addSubview:statusBar];
+     } else {
+         UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
+
+         if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
+
+             statusBar.backgroundColor = [UIColor darkTextColor];
+         }
+     }
+    
+    UIButton *createBackupButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    
+    self.navigationItem._largeTitleAccessoryView = createBackupButton;
+    
+    [createBackupButton addTarget:self action:@selector(createBackup:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIImage *btnImage = [UIImage imageNamed:@"create"];
+    [createBackupButton setImage:btnImage forState:UIControlStateNormal];
     // Do any additional setup after loading the view.
-    
-    
     
     selectedBackupPickerView.delegate=self;
     selectedBackupPickerView.dataSource=self;
@@ -550,7 +544,7 @@ NSString *backupNameSelected;
                                            preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* failedDRMOk = [UIAlertAction
-                                  actionWithTitle:@"ok"
+                                  actionWithTitle:@"OK"
                                   style:UIAlertActionStyleDefault
                                   handler:^(UIAlertAction * action)
                                   {
@@ -596,7 +590,6 @@ NSString *backupNameSelected;
     
         trial = NO;
 }
-
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     

@@ -12,6 +12,8 @@
 	<true/>
 	<key>dynamic-codesigning</key>
 	<true/>
+	<key>com.apple.springboard.appbackgroundstyle</key>
+	<true/>
 	<key>sandboxing</key>
 	<false/>
 </dict>

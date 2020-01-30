@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		93666BE123CFC98B004511C5 /* InfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93666BE023CFC98B004511C5 /* InfoTableViewController.m */; };
+		93891D9523B16D76001480E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93891D9323B16D76001480E8 /* Main.storyboard */; };
+		93AAC8B923DBF848008F8FED /* CircleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AAC8B823DBF848008F8FED /* CircleImageView.m */; };
+		BD5BEF5E23E2981E0014EE51 /* globalVars.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5BEF5D23E2981E0014EE51 /* globalVars.m */; };
 		BDCF0697224B544F00ED9A62 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BDCF0696224B544F00ED9A62 /* AppDelegate.m */; };
 		BDCF069A224B544F00ED9A62 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDCF0699224B544F00ED9A62 /* ViewController.m */; };
 		BDCF069D224B544F00ED9A62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDCF069B224B544F00ED9A62 /* Main.storyboard */; };
@@ -15,6 +19,7 @@
 		BDCF06A5224B545100ED9A62 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BDCF06A4224B545100ED9A62 /* main.m */; };
 		BDCF06AF224B545100ED9A62 /* FlashBackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BDCF06AE224B545100ED9A62 /* FlashBackTests.m */; };
 		BDCF06BA224B545100ED9A62 /* FlashBackUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BDCF06B9224B545100ED9A62 /* FlashBackUITests.m */; };
+		F25B6A202B1EE24F08E2408D /* libPods-FlashBack.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE8710948BA24FFBC03A04D4 /* libPods-FlashBack.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +40,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		812AE756A45667D1A5844EDE /* Pods-FlashBack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashBack.release.xcconfig"; path = "Target Support Files/Pods-FlashBack/Pods-FlashBack.release.xcconfig"; sourceTree = "<group>"; };
+		9318182E23B85E8100E3F260 /* UINavigationItem+LargeAccessoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+LargeAccessoryView.h"; sourceTree = "<group>"; };
+		93666BDF23CFC98B004511C5 /* InfoTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoTableViewController.h; sourceTree = "<group>"; };
+		93666BE023CFC98B004511C5 /* InfoTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewController.m; sourceTree = "<group>"; };
+		93891D9423B16D76001480E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FlashBack/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		93891D9623B19319001480E8 /* UIBackgroundStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIBackgroundStyle.h; sourceTree = "<group>"; };
+		93891D9823B197C5001480E8 /* sign.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = sign.entitlements; path = "../../FlashBack-master/FlashBack/sign.entitlements"; sourceTree = "<group>"; };
+		93AAC8B723DBF848008F8FED /* CircleImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleImageView.h; sourceTree = "<group>"; };
+		93AAC8B823DBF848008F8FED /* CircleImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleImageView.m; sourceTree = "<group>"; };
+		93F6038323E1090100479F31 /* FlashBack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlashBack.entitlements; sourceTree = "<group>"; };
+		A5303A83F5FA846DCC89DB82 /* Pods-FlashBack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashBack.debug.xcconfig"; path = "Target Support Files/Pods-FlashBack/Pods-FlashBack.debug.xcconfig"; sourceTree = "<group>"; };
+		BD5BEF5C23E297D90014EE51 /* globalVars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = globalVars.h; sourceTree = "<group>"; };
+		BD5BEF5D23E2981E0014EE51 /* globalVars.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = globalVars.m; sourceTree = "<group>"; };
 		BDCF0692224B544F00ED9A62 /* FlashBack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashBack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCF0695224B544F00ED9A62 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BDCF0696224B544F00ED9A62 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +69,7 @@
 		BDCF06B5224B545100ED9A62 /* FlashBackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlashBackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCF06B9224B545100ED9A62 /* FlashBackUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlashBackUITests.m; sourceTree = "<group>"; };
 		BDCF06BB224B545100ED9A62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE8710948BA24FFBC03A04D4 /* libPods-FlashBack.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FlashBack.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F25B6A202B1EE24F08E2408D /* libPods-FlashBack.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,11 +101,13 @@
 		BDCF0689224B544E00ED9A62 = {
 			isa = PBXGroup;
 			children = (
+				93891D9323B16D76001480E8 /* Main.storyboard */,
 				BDCF0694224B544F00ED9A62 /* FlashBack */,
 				BDCF06AD224B545100ED9A62 /* FlashBackTests */,
 				BDCF06B8224B545100ED9A62 /* FlashBackUITests */,
 				BDCF0693224B544F00ED9A62 /* Products */,
 				BDF33795226443090033A3A9 /* Frameworks */,
+				F52D1D0F71680DF63B6C326B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -102,15 +124,25 @@
 		BDCF0694224B544F00ED9A62 /* FlashBack */ = {
 			isa = PBXGroup;
 			children = (
-				BDCF0695224B544F00ED9A62 /* AppDelegate.h */,
+				93F6038323E1090100479F31 /* FlashBack.entitlements */,
+				93891D9823B197C5001480E8 /* sign.entitlements */,
 				BDCF0696224B544F00ED9A62 /* AppDelegate.m */,
+				BDCF0695224B544F00ED9A62 /* AppDelegate.h */,
+				93891D9623B19319001480E8 /* UIBackgroundStyle.h */,
+				9318182E23B85E8100E3F260 /* UINavigationItem+LargeAccessoryView.h */,
 				BDCF0698224B544F00ED9A62 /* ViewController.h */,
 				BDCF0699224B544F00ED9A62 /* ViewController.m */,
+				93666BDF23CFC98B004511C5 /* InfoTableViewController.h */,
+				93666BE023CFC98B004511C5 /* InfoTableViewController.m */,
+				93AAC8B723DBF848008F8FED /* CircleImageView.h */,
+				93AAC8B823DBF848008F8FED /* CircleImageView.m */,
 				BDCF069B224B544F00ED9A62 /* Main.storyboard */,
 				BDCF069E224B545100ED9A62 /* Assets.xcassets */,
 				BDCF06A0224B545100ED9A62 /* LaunchScreen.storyboard */,
 				BDCF06A3224B545100ED9A62 /* Info.plist */,
 				BDCF06A4224B545100ED9A62 /* main.m */,
+				BD5BEF5C23E297D90014EE51 /* globalVars.h */,
+				BD5BEF5D23E2981E0014EE51 /* globalVars.m */,
 			);
 			path = FlashBack;
 			sourceTree = "<group>";
@@ -136,8 +168,18 @@
 		BDF33795226443090033A3A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DE8710948BA24FFBC03A04D4 /* libPods-FlashBack.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F52D1D0F71680DF63B6C326B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A5303A83F5FA846DCC89DB82 /* Pods-FlashBack.debug.xcconfig */,
+				812AE756A45667D1A5844EDE /* Pods-FlashBack.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +189,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BDCF06BE224B545100ED9A62 /* Build configuration list for PBXNativeTarget "FlashBack" */;
 			buildPhases = (
+				84699C26E4C6F3DB53C5F986 /* [CP] Check Pods Manifest.lock */,
 				BDCF068E224B544F00ED9A62 /* Sources */,
 				BDCF068F224B544F00ED9A62 /* Frameworks */,
 				BDCF0690224B544F00ED9A62 /* Resources */,
@@ -246,6 +289,7 @@
 				BDCF06A2224B545100ED9A62 /* LaunchScreen.storyboard in Resources */,
 				BDCF069F224B545100ED9A62 /* Assets.xcassets in Resources */,
 				BDCF069D224B544F00ED9A62 /* Main.storyboard in Resources */,
+				93891D9523B16D76001480E8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +309,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		84699C26E4C6F3DB53C5F986 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlashBack-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BDCF068E224B544F00ED9A62 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -272,7 +341,10 @@
 			files = (
 				BDCF069A224B544F00ED9A62 /* ViewController.m in Sources */,
 				BDCF06A5224B545100ED9A62 /* main.m in Sources */,
+				BD5BEF5E23E2981E0014EE51 /* globalVars.m in Sources */,
 				BDCF0697224B544F00ED9A62 /* AppDelegate.m in Sources */,
+				93AAC8B923DBF848008F8FED /* CircleImageView.m in Sources */,
+				93666BE123CFC98B004511C5 /* InfoTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +380,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		93891D9323B16D76001480E8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				93891D9423B16D76001480E8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		BDCF069B224B544F00ED9A62 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -441,9 +521,11 @@
 		};
 		BDCF06BF224B545100ED9A62 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A5303A83F5FA846DCC89DB82 /* Pods-FlashBack.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FlashBack/FlashBack.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YCX729N7CK;
@@ -457,19 +539,22 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mpg13.FlashBack;
+				MARKETING_VERSION = 4.0.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		BDCF06C0224B545100ED9A62 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 812AE756A45667D1A5844EDE /* Pods-FlashBack.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = FlashBack/FlashBack.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = YCX729N7CK;
@@ -483,10 +568,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.6.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mpg13.FlashBack;
+				MARKETING_VERSION = 4.0.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTS_MACCATALYST = NO;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
