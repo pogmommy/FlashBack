@@ -16,7 +16,6 @@
 #import "globalVars.h"
 
 
-BOOL trial;
 NSArray *_backupFolderArray;
 NSString *_backupDirectory;
 NSMutableString *selectedBackupImageURL;
@@ -249,9 +248,7 @@ NSString *backupNameSelected;
 
 - (IBAction)packageBackup:(id)sender {
     
-    if (trial == NO){
-        
-        if (backupNameSelected == nil){
+    if (backupNameSelected == nil){
             
             UIAlertController * selectBackupAlert=   [UIAlertController
                                                       alertControllerWithTitle:@"Select a Backup!"
@@ -319,29 +316,6 @@ NSString *backupNameSelected;
             
             [self presentViewController:packageBackupAlert animated:YES completion:nil];
         }
-    }
-    
-    else{
-        
-        UIAlertController * noBackupDEBAlert =   [UIAlertController
-                                                    alertControllerWithTitle:@"Creating DEBs is only available in the full version"
-                                                    message:@"The free trial of FlashBack doesn't allow backing up setups to DEBs. Purchase the full version on PackIX for $1.50 for this!"
-                                                    preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction* ok = [UIAlertAction
-                             actionWithTitle:@"ok"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action)
-                             {
-                                 [noBackupDEBAlert dismissViewControllerAnimated:YES completion:nil];
-                                 
-                             }];
-        
-        [noBackupDEBAlert addAction:ok];
-        
-        [self presentViewController:noBackupDEBAlert animated:YES completion:nil];
-        
-    }
 }
 
 - (IBAction)deleteBackup:(id)sender {
@@ -471,60 +445,6 @@ NSString *backupNameSelected;
     //_backupFolderArray = @[@"one",@"two",@"three"];
     _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/Library/FlashBack/Backups/" error:nil];
     
-    // MARK: DRM From @Kushdabush, commenting out for testing
-    //pulled from https://github.com/DomienF/kushy-drm/blob/master/Tweak.xm
-    
-    UIAlertController * failedDRMAlert=   [UIAlertController
-                                           alertControllerWithTitle:@"FlashBack appears to be pirated :("
-                                           message:@"For your own safety, download FlashBack from the official source! If you're seeing this, then it means that whoever is distributing this copy is either sharing a ripped version that is potentially dangerous, or they have forgotten to remove this warning for yours, and their own protection."
-                                           preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* failedDRMOk = [UIAlertAction
-                                  actionWithTitle:@"OK"
-                                  style:UIAlertActionStyleDefault
-                                  handler:^(UIAlertAction * action)
-                                  {
-                                      [failedDRMAlert dismissViewControllerAnimated:YES completion:nil];
-                                      //exit(0);
-                                  }];
-    
-    UIAlertController * trialNoticeAlert=   [UIAlertController
-                                             alertControllerWithTitle:@"Trial Notice"
-                                             message:@"Thanks for checking out FlashBack! This trial allows you to give FlashBack a test run allowing for one backup. You can use that backup as a checkpoint to revert to after making changes."
-                                             preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* trialOk = [UIAlertAction
-                              actionWithTitle:@"ok"
-                              style:UIAlertActionStyleDefault
-                              handler:^(UIAlertAction * action)
-                              {
-                                  [trialNoticeAlert dismissViewControllerAnimated:YES completion:nil];
-                              }];
-    
-    [failedDRMAlert addAction:failedDRMOk];
-    [trialNoticeAlert addAction:trialOk];
-    
-    if ([[NSFileManager defaultManager] fileExistsAtPath:@"/var/lib/dpkg/info/com.mpg13.flashback.list"]){
-        NSLog(@"FlashBack DRM Passed");
-        trial = NO;
-    }
-    else{
-        if ([[NSFileManager defaultManager] fileExistsAtPath:@"/var/lib/dpkg/info/com.mpg13.flashbackfree.list"]){
-            NSLog(@"FlashBack Trial Mode");
-            trial = YES;
-            dispatch_async(dispatch_get_main_queue(), ^ {
-                [self presentViewController:trialNoticeAlert animated:YES completion:nil];
-            });
-        }
-        else{
-            NSLog(@"DRM failed");
-            dispatch_async(dispatch_get_main_queue(), ^ {
-                [self presentViewController:failedDRMAlert animated:YES completion:nil];
-            });
-        }
-    }
-    
-        trial = NO;
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
