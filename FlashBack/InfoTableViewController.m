@@ -17,16 +17,6 @@
 
 @implementation InfoTableViewController
 
-
-//- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    // Override point for customization after application launch.
-//    [application _setBackgroundStyle:UIBackgroundStyleExtraDarkBlur];
-//
-//    _cel.backgroundColor = [UIColor clearColor];
-//
-//    return YES;
-//}
-
 - (IBAction)tweaksSwitch:(id)sender {
 
     tweaksEnabled = [sender isOn];
@@ -52,10 +42,10 @@
     [super viewWillAppear:animated];
     
     [self.micahImageView sd_setImageWithURL:[NSURL URLWithString:@"https://pbs.twimg.com/profile_images/1212132374059704320/qqFaZi2a_400x400.jpg"]
-    placeholderImage:[UIImage imageNamed:nil]];
+    placeholderImage:nil];
 
    [self.aaronImageView sd_setImageWithURL:[NSURL URLWithString:@"https://pbs.twimg.com/profile_images/1195388235335254016/6DAkWcSq_400x400.jpg"]
-    placeholderImage:[UIImage imageNamed:nil]];
+    placeholderImage:nil];
     
 }
 
@@ -66,39 +56,30 @@
         return [NSURL URLWithString:[NSString stringWithFormat:@"twitterrific:///profile?screen_name=%@", userName]];
     } else if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"tweetings://"]]) {
         return [NSURL URLWithString:[NSString stringWithFormat:@"tweetings:///user?screen_name=%@", userName]];
-    } else if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"twitter://"]]) {
-        return [NSURL URLWithString:[NSString stringWithFormat:@"https://mobile.twitter.com/%@", userName]];
-    } else {
-        return [NSURL URLWithString:[NSString stringWithFormat:@"https://mobile.twitter.com/%@", userName]];
     }
+    return [NSURL URLWithString:[NSString stringWithFormat:@"https://mobile.twitter.com/%@", userName]];
 }
 
-- (void)tableView:(UITableView *)tableView willDisplayFooterView:(UIView *)view forSection:(NSInteger)section
-{
+- (void)tableView:(UITableView *)tableView willDisplayFooterView:(UIView *)view forSection:(NSInteger)section {
     UITableViewHeaderFooterView *footer = (UITableViewHeaderFooterView *)view;
     footer.textLabel.textAlignment = NSTextAlignmentCenter;
 }
 
-
 -(void)micahTwitterProfile{
-        [[UIApplication sharedApplication] openURL:[InfoTableViewController openTwitterProfile:@"MicahPGomez"]];
+    [[UIApplication sharedApplication] openURL:[InfoTableViewController openTwitterProfile:@"MicahPGomez"]];
 }
     
 -(void)aaronTwitterProfile{
     [[UIApplication sharedApplication] openURL:[InfoTableViewController openTwitterProfile:@"23Aaron_"]];
 }
 
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-   
+    
     if (indexPath.section == 0 && indexPath.row == 0) {
         [self micahTwitterProfile];
-        }
-
-    else if (indexPath.section == 0 && indexPath.row == 1) {
+    } else if (indexPath.section == 0 && indexPath.row == 1) {
         [self aaronTwitterProfile];
     }
-
 }
 @end

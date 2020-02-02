@@ -12,6 +12,7 @@
 #include "NSTask.h"
 #import "UIImage+Private.h"
 #import "UIBackgroundStyle.h"
+#import "UIAlertAction+Common.h"
 #import "UINavigationItem+LargeAccessoryView.h"
 #import "globalVars.h"
 
@@ -32,7 +33,7 @@ NSString *backupNameSelected;
             textField.placeholder = @"Backup Name";
             textField.secureTextEntry = NO;
         }];
-        UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIAlertAction *confirmAction = [UIAlertAction okActionWithHandler:^(UIAlertAction * _Nonnull action) {
             NSLog(@"Backup name is :%@", [[createBackupAlert textFields][0] text]);
             NSString *newBackupName=[[createBackupAlert textFields][0] text];
             
@@ -55,10 +56,7 @@ NSString *backupNameSelected;
                                                             message:@"The backup has been successfully created"
                                                             preferredStyle:UIAlertControllerStyleAlert];
                 
-                UIAlertAction* ok = [UIAlertAction
-                                     actionWithTitle:@"OK"
-                                     style:UIAlertActionStyleDefault
-                                     handler:^(UIAlertAction * action)
+                UIAlertAction* ok = [UIAlertAction okActionWithHandler:^(UIAlertAction * action)
                                      {
                                          
                                          _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/Library/FlashBack/Backups/" error:nil];
@@ -78,14 +76,9 @@ NSString *backupNameSelected;
                  waitpid(pid, &status, WEXITED);*/
                 
             }
-            
-            
         }];
         [createBackupAlert addAction:confirmAction];
-        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
-            NSLog(@"Canelled");
-        }];
-        [createBackupAlert addAction:cancelAction];
+        [createBackupAlert addAction:[UIAlertAction cancelAction]];
         [self presentViewController:createBackupAlert animated:YES completion:nil];
 }
 
@@ -98,16 +91,7 @@ NSString *backupNameSelected;
                                                   message:@"Scroll through the list then let it settle on an item to select the backup."
                                                   preferredStyle:UIAlertControllerStyleAlert];
         
-        UIAlertAction* ok = [UIAlertAction
-                             actionWithTitle:@"ok"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action)
-                             {
-                                 [selectBackupAlert dismissViewControllerAnimated:YES completion:nil];
-                                 
-                             }];
-        
-        [selectBackupAlert addAction:ok];
+        [selectBackupAlert addAction:[UIAlertAction okAction]];
         
         [self presentViewController:selectBackupAlert animated:YES completion:nil];
         
@@ -119,10 +103,7 @@ NSString *backupNameSelected;
                                                    message:@"Your device will revert to the selected backup! Please wait for your device to respring."
                                                    preferredStyle:UIAlertControllerStyleAlert];
         
-        UIAlertAction* ok = [UIAlertAction
-                             actionWithTitle:@"OK"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action)
+        UIAlertAction* ok = [UIAlertAction okActionWithHandler:^(UIAlertAction * action)
                              {
                                  
                                  //RUN RESTORE SCRIPT
@@ -141,17 +122,9 @@ NSString *backupNameSelected;
                                  [restoreBackupAlert dismissViewControllerAnimated:YES completion:nil];
                                  
                              }];
-        UIAlertAction* cancel = [UIAlertAction
-                                 actionWithTitle:@"Cancel"
-                                 style:UIAlertActionStyleDefault
-                                 handler:^(UIAlertAction * action)
-                                 {
-                                     [restoreBackupAlert dismissViewControllerAnimated:YES completion:nil];
-                                     
-                                 }];
         
-        [restoreBackupAlert addAction:cancel];
         [restoreBackupAlert addAction:ok];
+        [restoreBackupAlert addAction:[UIAlertAction cancelAction]];
         
         [self presentViewController:restoreBackupAlert animated:YES completion:nil];
     }
@@ -165,17 +138,8 @@ NSString *backupNameSelected;
                                                   alertControllerWithTitle:@"Select a Backup!"
                                                   message:@"Scroll through the list then let it settle on an item to select the backup."
                                                   preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction* ok = [UIAlertAction
-                             actionWithTitle:@"ok"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action)
-                             {
-                                 [updateBackupAlert dismissViewControllerAnimated:YES completion:nil];
-                                 
-                             }];
-        
-        [updateBackupAlert addAction:ok];
+
+        [updateBackupAlert addAction:[UIAlertAction okAction]];
         
         [self presentViewController:updateBackupAlert animated:YES completion:nil];
         
@@ -187,10 +151,7 @@ NSString *backupNameSelected;
                                                   message:@"The selected backup will be overwritten! Please wait until the completion pop-up appears"
                                                   preferredStyle:UIAlertControllerStyleAlert];
         
-        UIAlertAction* ok = [UIAlertAction
-                             actionWithTitle:@"OK"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action)
+        UIAlertAction* ok = [UIAlertAction okActionWithHandler:^(UIAlertAction * action)
                              {
                                  
                                  
@@ -213,17 +174,11 @@ NSString *backupNameSelected;
                                                                              message:@"The backup has been successfully updated"
                                                                              preferredStyle:UIAlertControllerStyleAlert];
                                  
-                                 UIAlertAction* ok = [UIAlertAction
-                                                      actionWithTitle:@"OK"
-                                                      style:UIAlertActionStyleDefault
-                                                      handler:^(UIAlertAction * action)
+                                 UIAlertAction* ok = [UIAlertAction okActionWithHandler:^(UIAlertAction * action)
                                                       {
                                                           
                                                           _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/Library/FlashBack/Backups/" error:nil];
                                                           [self->selectedBackupPickerView reloadAllComponents];
-                                                          
-                                                          [finishedUpdateAlert dismissViewControllerAnimated:YES completion:nil];
-                                                          
                                                       }];
                                  [finishedUpdateAlert addAction:ok];
                                  
@@ -231,14 +186,7 @@ NSString *backupNameSelected;
                                  
                                  
                              }];
-        UIAlertAction* cancel = [UIAlertAction
-                                 actionWithTitle:@"Cancel"
-                                 style:UIAlertActionStyleDefault
-                                 handler:^(UIAlertAction * action)
-                                 {
-                                     [updateBackupAlert dismissViewControllerAnimated:YES completion:nil];
-                                     
-                                 }];
+        UIAlertAction* cancel = [UIAlertAction cancelAction];
         
         [updateBackupAlert addAction:cancel];
         [updateBackupAlert addAction:ok];
@@ -257,17 +205,7 @@ NSString *backupNameSelected;
                                                       alertControllerWithTitle:@"Select a Backup!"
                                                       message:@"Scroll through the list then let it settle on an item to select the backup."
                                                       preferredStyle:UIAlertControllerStyleAlert];
-            
-            UIAlertAction* ok = [UIAlertAction
-                                 actionWithTitle:@"ok"
-                                 style:UIAlertActionStyleDefault
-                                 handler:^(UIAlertAction * action)
-                                 {
-                                     [selectBackupAlert dismissViewControllerAnimated:YES completion:nil];
-                                     
-                                 }];
-            
-            [selectBackupAlert addAction:ok];
+            [selectBackupAlert addAction:[UIAlertAction okAction]];
             
             [self presentViewController:selectBackupAlert animated:YES completion:nil];
             
@@ -279,10 +217,7 @@ NSString *backupNameSelected;
                                                        message:@"This will package the selected backup to a DEB file."
                                                        preferredStyle:UIAlertControllerStyleAlert];
             
-            UIAlertAction* ok = [UIAlertAction
-                                 actionWithTitle:@"OK"
-                                 style:UIAlertActionStyleDefault
-                                 handler:^(UIAlertAction * action)
+            UIAlertAction* ok = [UIAlertAction okActionWithHandler:^(UIAlertAction * action)
                                  {
                                      
                                      UIAlertController * packageBackupWait=   [UIAlertController
@@ -305,14 +240,7 @@ NSString *backupNameSelected;
                                      [packageBackupWait dismissViewControllerAnimated:YES completion:nil];
                                      
                                  }];
-            UIAlertAction* cancel = [UIAlertAction
-                                     actionWithTitle:@"Cancel"
-                                     style:UIAlertActionStyleDefault
-                                     handler:^(UIAlertAction * action)
-                                     {
-                                         [packageBackupAlert dismissViewControllerAnimated:YES completion:nil];
-                                         
-                                     }];
+            UIAlertAction* cancel = [UIAlertAction cancelAction];
             
             [packageBackupAlert addAction:cancel];
             [packageBackupAlert addAction:ok];
@@ -328,16 +256,7 @@ NSString *backupNameSelected;
                                                     message:@"The free trial of FlashBack doesn't allow backing up setups to DEBs. Purchase the full version on PackIX for $1.50 for this!"
                                                     preferredStyle:UIAlertControllerStyleAlert];
         
-        UIAlertAction* ok = [UIAlertAction
-                             actionWithTitle:@"ok"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action)
-                             {
-                                 [noBackupDEBAlert dismissViewControllerAnimated:YES completion:nil];
-                                 
-                             }];
-        
-        [noBackupDEBAlert addAction:ok];
+        [noBackupDEBAlert addAction:[UIAlertAction okAction]];
         
         [self presentViewController:noBackupDEBAlert animated:YES completion:nil];
         
@@ -353,16 +272,7 @@ NSString *backupNameSelected;
                                                   message:@"Scroll through the list then let it settle on an item to select the backup."
                                                   preferredStyle:UIAlertControllerStyleAlert];
         
-        UIAlertAction* ok = [UIAlertAction
-                             actionWithTitle:@"ok"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action)
-                             {
-                                 [selectBackupAlert dismissViewControllerAnimated:YES completion:nil];
-                                 
-                             }];
-        
-        [selectBackupAlert addAction:ok];
+        [selectBackupAlert addAction:[UIAlertAction okAction]];
         
         [self presentViewController:selectBackupAlert animated:YES completion:nil];
         
@@ -373,10 +283,7 @@ NSString *backupNameSelected;
                                               message:@"The selected backup will be deleted!"
                                               preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction* ok = [UIAlertAction
-                         actionWithTitle:@"OK"
-                         style:UIAlertActionStyleDefault
-                         handler:^(UIAlertAction * action)
+    UIAlertAction* ok = [UIAlertAction okActionWithHandler:^(UIAlertAction * action)
                          {
                              
                              NSTask *deleteTask = [[NSTask alloc] init];
@@ -390,10 +297,7 @@ NSString *backupNameSelected;
                                                                          message:@"The backup has been deleted successfully"
                                                                          preferredStyle:UIAlertControllerStyleAlert];
                              
-                             UIAlertAction* okey = [UIAlertAction
-                                                    actionWithTitle:@"ok"
-                                                    style:UIAlertActionStyleDefault
-                                                    handler:^(UIAlertAction * action)
+                             UIAlertAction* okey = [UIAlertAction okActionWithHandler:^(UIAlertAction * action)
                                                     {
                                                         
                                                         _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/Library/FlashBack/Backups/" error:nil];
@@ -406,28 +310,12 @@ NSString *backupNameSelected;
                              [deleteFinishedAlert addAction:okey];
                              
                              [self presentViewController:deleteFinishedAlert animated:YES completion:nil];
-                             
-                             
-                             
-                             [deleteBackupAlert dismissViewControllerAnimated:YES completion:nil];
                          }];
-    UIAlertAction* cancel = [UIAlertAction
-                             actionWithTitle:@"Cancel"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action)
-                             {
-                                 
-                                 [deleteBackupAlert dismissViewControllerAnimated:YES completion:nil];
-                                 
-                             }];
     
-    [deleteBackupAlert addAction:cancel];
     [deleteBackupAlert addAction:ok];
+    [deleteBackupAlert addAction:[UIAlertAction cancelAction]];
     
     [self presentViewController:deleteBackupAlert animated:YES completion:nil];
-    
-    
-    
 }
 
 
@@ -439,30 +327,13 @@ NSString *backupNameSelected;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    if (@available(iOS 13.0, *)) {
-         API_AVAILABLE(ios(13.0))
-         UIView *statusBar = [[UIView alloc]initWithFrame:[UIApplication sharedApplication].keyWindow.windowScene.statusBarManager.statusBarFrame];
-         statusBar.backgroundColor = [UIColor darkTextColor];
-         [[UIApplication sharedApplication].keyWindow addSubview:statusBar];
-     } else {
-         UIView *statusBar = [[[UIApplication sharedApplication] valueForKey:@"statusBarWindow"] valueForKey:@"statusBar"];
 
-         if ([statusBar respondsToSelector:@selector(setBackgroundColor:)]) {
-
-             statusBar.backgroundColor = [UIColor darkTextColor];
-         }
-     }
-    
     UIButton *createBackupButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    
-    self.navigationItem._largeTitleAccessoryView = createBackupButton;
-    
     [createBackupButton addTarget:self action:@selector(createBackup:) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIImage *btnImage = [UIImage imageNamed:@"create"];
-    [createBackupButton setImage:btnImage forState:UIControlStateNormal];
+    [createBackupButton setImage:[UIImage imageNamed:@"create"] forState:UIControlStateNormal];
+    self.navigationItem._largeTitleAccessoryView = createBackupButton;
     // Do any additional setup after loading the view.
+    
     
     selectedBackupPickerView.delegate=self;
     selectedBackupPickerView.dataSource=self;
@@ -473,100 +344,45 @@ NSString *backupNameSelected;
     
     // MARK: DRM From @Kushdabush, commenting out for testing
     //pulled from https://github.com/DomienF/kushy-drm/blob/master/Tweak.xm
-    
-    UIAlertController * failedDRMAlert=   [UIAlertController
-                                           alertControllerWithTitle:@"FlashBack appears to be pirated :("
-                                           message:@"For your own safety, download FlashBack from the official source! If you're seeing this, then it means that whoever is distributing this copy is either sharing a ripped version that is potentially dangerous, or they have forgotten to remove this warning for yours, and their own protection."
-                                           preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* failedDRMOk = [UIAlertAction
-                                  actionWithTitle:@"OK"
-                                  style:UIAlertActionStyleDefault
-                                  handler:^(UIAlertAction * action)
-                                  {
-                                      [failedDRMAlert dismissViewControllerAnimated:YES completion:nil];
-                                      //exit(0);
-                                  }];
-    
-    UIAlertController * trialNoticeAlert=   [UIAlertController
-                                             alertControllerWithTitle:@"Trial Notice"
-                                             message:@"Thanks for checking out FlashBack! This trial allows you to give FlashBack a test run allowing for one backup. You can use that backup as a checkpoint to revert to after making changes."
-                                             preferredStyle:UIAlertControllerStyleAlert];
-    
-    UIAlertAction* trialOk = [UIAlertAction
-                              actionWithTitle:@"ok"
-                              style:UIAlertActionStyleDefault
-                              handler:^(UIAlertAction * action)
-                              {
-                                  [trialNoticeAlert dismissViewControllerAnimated:YES completion:nil];
-                              }];
-    
-    [failedDRMAlert addAction:failedDRMOk];
-    [trialNoticeAlert addAction:trialOk];
-    
+
     if ([[NSFileManager defaultManager] fileExistsAtPath:@"/var/lib/dpkg/info/com.mpg13.flashback.list"]){
         NSLog(@"FlashBack DRM Passed");
         trial = NO;
-    }
-    else{
-        if ([[NSFileManager defaultManager] fileExistsAtPath:@"/var/lib/dpkg/info/com.mpg13.flashbackfree.list"]){
-            NSLog(@"FlashBack Trial Mode");
-            trial = YES;
-            dispatch_async(dispatch_get_main_queue(), ^ {
-                [self presentViewController:trialNoticeAlert animated:YES completion:nil];
-            });
-        }
-        else{
-            NSLog(@"DRM failed");
-            dispatch_async(dispatch_get_main_queue(), ^ {
-                [self presentViewController:failedDRMAlert animated:YES completion:nil];
-            });
-        }
+    } else {
+        NSLog(@"DRM failed");
+        
+        UIAlertController * failedDRMAlert = [UIAlertController
+                                               alertControllerWithTitle:@"FlashBack appears to be pirated :("
+                                               message:@"For your own safety, download FlashBack from the official source! If you're seeing this, then it means that whoever is distributing this copy is either sharing a ripped version that is potentially dangerous, or they have forgotten to remove this warning for yours, and their own protection."
+                                               preferredStyle:UIAlertControllerStyleAlert];
+        [failedDRMAlert addAction:[UIAlertAction okAction]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^ {
+            [self presentViewController:failedDRMAlert animated:YES completion:nil];
+        });
     }
     
         trial = NO;
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    if (_backupFolderArray == nil) return;
     
-    if (_backupFolderArray == nil){
-        
-        UIAlertController * emptyArrayAlert=   [UIAlertController
-                                                alertControllerWithTitle:@"Let's start by making a backup!"
-                                                message:@"Press 'Create Backup (+)' to get started!"
-                                                preferredStyle:UIAlertControllerStyleAlert];
-        
-        UIAlertAction* ok = [UIAlertAction
-                             actionWithTitle:@"ok"
-                             style:UIAlertActionStyleDefault
-                             handler:^(UIAlertAction * action)
-                             {
-                                 [emptyArrayAlert dismissViewControllerAnimated:YES completion:nil];
-                                 
-                             }];
-        
-        [emptyArrayAlert addAction:ok];
-        
-        [self presentViewController:emptyArrayAlert animated:YES completion:nil];
-        
-    }
-    else{
-        backupNameSelected = [_backupFolderArray objectAtIndex:row];
-        selectedBackupText.text=backupNameSelected;
-        
-        selectedBackupURL = [NSMutableString stringWithString: @"/Library/FlashBack/Backups/"];
-        [selectedBackupURL appendString: backupNameSelected];
-        
-        selectedBackupImageURL=selectedBackupURL;
-        
-        [selectedBackupImageURL appendString: @"/SBFolder/LockBackgroundThumbnail.jpg"];
-        NSLog(@"%@", selectedBackupImageURL);
-        NSURL *url = [NSURL fileURLWithPath:selectedBackupImageURL];
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        selectedBackupImage.image = [UIImage imageWithData:data];
-        
-        NSLog(@"%@", backupNameSelected);
-    }
+    backupNameSelected = [_backupFolderArray objectAtIndex:row];
+    selectedBackupText.text=backupNameSelected;
+    
+    selectedBackupURL = [NSMutableString stringWithString: @"/Library/FlashBack/Backups/"];
+    [selectedBackupURL appendString: backupNameSelected];
+    
+    selectedBackupImageURL=selectedBackupURL;
+    
+    [selectedBackupImageURL appendString: @"/SBFolder/LockBackgroundThumbnail.jpg"];
+    NSLog(@"%@", selectedBackupImageURL);
+    NSURL *url = [NSURL fileURLWithPath:selectedBackupImageURL];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    selectedBackupImage.image = [UIImage imageWithData:data];
+    
+    NSLog(@"%@", backupNameSelected);
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{

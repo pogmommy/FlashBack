@@ -20,6 +20,23 @@
     // Override point for customization after application launch.
     [application _setBackgroundStyle:UIBackgroundStyleExtraDarkBlur];
     
+    UIColor *barBackground = [UIColor colorWithWhite:0 alpha:0.3];
+    if (@available(iOS 13.0, *)) {
+        UIBarAppearance *barAppearance = [[UIBarAppearance alloc] init];
+        [barAppearance configureWithDefaultBackground];
+        barAppearance.backgroundColor = barBackground;
+        
+        [UINavigationBar appearance].standardAppearance = [[UINavigationBarAppearance alloc] initWithBarAppearance:barAppearance];
+        [UINavigationBar appearance].scrollEdgeAppearance = [UINavigationBar appearance].standardAppearance;
+        [UINavigationBar appearance].overrideUserInterfaceStyle = UIUserInterfaceStyleDark;
+        
+        [UITabBar appearance].standardAppearance = [[UITabBarAppearance alloc] initWithBarAppearance:barAppearance];
+        [UITabBar appearance].overrideUserInterfaceStyle = UIUserInterfaceStyleDark;
+    } else {
+        [UINavigationBar appearance].backgroundColor = barBackground;
+        [UITabBar appearance].backgroundColor = barBackground;
+    }
+    
     _window.backgroundColor = [UIColor clearColor];
     
     return YES;
