@@ -17,7 +17,6 @@
 #import "globalVars.h"
 
 
-BOOL trial;
 NSArray *_backupFolderArray;
 NSString *_backupDirectory;
 NSMutableString *selectedBackupImageURL;
@@ -197,9 +196,7 @@ NSString *backupNameSelected;
 
 - (IBAction)packageBackup:(id)sender {
     
-    if (trial == NO){
-        
-        if (backupNameSelected == nil){
+    if (backupNameSelected == nil){
             
             UIAlertController * selectBackupAlert=   [UIAlertController
                                                       alertControllerWithTitle:@"Select a Backup!"
@@ -247,20 +244,6 @@ NSString *backupNameSelected;
             
             [self presentViewController:packageBackupAlert animated:YES completion:nil];
         }
-    }
-    
-    else{
-        
-        UIAlertController * noBackupDEBAlert =   [UIAlertController
-                                                    alertControllerWithTitle:@"Creating DEBs is only available in the full version"
-                                                    message:@"The free trial of FlashBack doesn't allow backing up setups to DEBs. Purchase the full version on PackIX for $1.50 for this!"
-                                                    preferredStyle:UIAlertControllerStyleAlert];
-        
-        [noBackupDEBAlert addAction:[UIAlertAction okAction]];
-        
-        [self presentViewController:noBackupDEBAlert animated:YES completion:nil];
-        
-    }
 }
 
 - (IBAction)deleteBackup:(id)sender {
@@ -342,27 +325,6 @@ NSString *backupNameSelected;
     //_backupFolderArray = @[@"one",@"two",@"three"];
     _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/Library/FlashBack/Backups/" error:nil];
     
-    // MARK: DRM From @Kushdabush, commenting out for testing
-    //pulled from https://github.com/DomienF/kushy-drm/blob/master/Tweak.xm
-
-    if ([[NSFileManager defaultManager] fileExistsAtPath:@"/var/lib/dpkg/info/com.mpg13.flashback.list"]){
-        NSLog(@"FlashBack DRM Passed");
-        trial = NO;
-    } else {
-        NSLog(@"DRM failed");
-        
-        UIAlertController * failedDRMAlert = [UIAlertController
-                                               alertControllerWithTitle:@"FlashBack appears to be pirated :("
-                                               message:@"For your own safety, download FlashBack from the official source! If you're seeing this, then it means that whoever is distributing this copy is either sharing a ripped version that is potentially dangerous, or they have forgotten to remove this warning for yours, and their own protection."
-                                               preferredStyle:UIAlertControllerStyleAlert];
-        [failedDRMAlert addAction:[UIAlertAction okAction]];
-        
-        dispatch_async(dispatch_get_main_queue(), ^ {
-            [self presentViewController:failedDRMAlert animated:YES completion:nil];
-        });
-    }
-    
-        trial = NO;
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
