@@ -348,9 +348,7 @@ NSString *backupNameSelected;
 }
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    
     return _backupFolderArray.count;
-    
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
@@ -358,9 +356,7 @@ NSString *backupNameSelected;
 }
 
 -(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    
     return _backupFolderArray[row];
-    
 }
 @end
 

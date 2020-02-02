@@ -28,10 +28,8 @@
         
         [UINavigationBar appearance].standardAppearance = [[UINavigationBarAppearance alloc] initWithBarAppearance:barAppearance];
         [UINavigationBar appearance].scrollEdgeAppearance = [UINavigationBar appearance].standardAppearance;
-        [UINavigationBar appearance].overrideUserInterfaceStyle = UIUserInterfaceStyleDark;
         
         [UITabBar appearance].standardAppearance = [[UITabBarAppearance alloc] initWithBarAppearance:barAppearance];
-        [UITabBar appearance].overrideUserInterfaceStyle = UIUserInterfaceStyleDark;
     } else {
         [UINavigationBar appearance].backgroundColor = barBackground;
         [UITabBar appearance].backgroundColor = barBackground;

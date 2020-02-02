@@ -8,12 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface UIAlertAction (Common)
 + (UIAlertAction *)okAction;
 + (UIAlertAction *)okActionWithHandler:(void (^)(UIAlertAction *action))handler;
 + (UIAlertAction *)cancelAction;
 @end
-
-NS_ASSUME_NONNULL_END
