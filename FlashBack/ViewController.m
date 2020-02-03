@@ -361,8 +361,9 @@ NSString *backupNameSelected;
     return 1;
 }
 
--(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    return _backupFolderArray[row];
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    NSString *name = _backupFolderArray[row];
+    return [[NSAttributedString alloc] initWithString:name attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
 }
 @end
 
