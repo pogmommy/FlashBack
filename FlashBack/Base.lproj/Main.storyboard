@@ -226,11 +226,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="118"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yVj-5d-ofF">
-                                                    <rect key="frame" x="298" y="11" width="30" height="30"/>
-                                                    <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <accessibility key="accessibilityConfiguration" label="Create Glyph"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" text="This will prompt you for a name for the backup which will be shown in the picker above, then create and save the backup." lineBreakMode="tailTruncation" numberOfLines="3" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DhG-Vy-Joo">
                                                     <rect key="frame" x="17" y="44" width="309" height="54"/>
                                                     <accessibility key="accessibilityConfiguration" label="This will prompt you for a name for the backup which will be shown in the picker above, then create and save the backup."/>
@@ -254,15 +249,17 @@
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                     </variation>
                                                 </label>
+                                                <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErO-Eg-49T">
+                                                    <rect key="frame" x="290" y="11" width="30" height="30"/>
+                                                    <state key="normal" image="create"/>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="yVj-5d-ofF" firstAttribute="trailing" secondItem="jmR-bF-o2W" secondAttribute="trailingMargin" id="4mz-LO-yvp"/>
                                                 <constraint firstAttribute="trailing" secondItem="DhG-Vy-Joo" secondAttribute="trailing" constant="17" id="E5j-xj-zQM"/>
                                                 <constraint firstItem="DhG-Vy-Joo" firstAttribute="leading" secondItem="jmR-bF-o2W" secondAttribute="leading" constant="17" id="Eip-rs-7Je"/>
-                                                <constraint firstItem="yVj-5d-ofF" firstAttribute="trailing" secondItem="jmR-bF-o2W" secondAttribute="trailingMargin" id="I6N-re-fmq"/>
-                                                <constraint firstItem="yVj-5d-ofF" firstAttribute="top" secondItem="jmR-bF-o2W" secondAttribute="topMargin" id="KBd-N3-6Q2"/>
+                                                <constraint firstItem="ErO-Eg-49T" firstAttribute="top" secondItem="jmR-bF-o2W" secondAttribute="topMargin" id="it6-bz-jsW"/>
                                                 <constraint firstItem="JAG-jl-3ew" firstAttribute="top" secondItem="jmR-bF-o2W" secondAttribute="topMargin" constant="3" id="kSF-jj-jR0"/>
-                                                <constraint firstItem="yVj-5d-ofF" firstAttribute="top" secondItem="jmR-bF-o2W" secondAttribute="topMargin" id="kVI-gV-ncN"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ErO-Eg-49T" secondAttribute="trailing" constant="8" id="pM1-ta-5nr"/>
                                                 <constraint firstItem="DhG-Vy-Joo" firstAttribute="centerX" secondItem="jmR-bF-o2W" secondAttribute="centerX" id="tv0-nu-BHK"/>
                                                 <constraint firstAttribute="bottom" secondItem="DhG-Vy-Joo" secondAttribute="bottom" constant="11" id="vKm-IX-Uah"/>
                                                 <constraint firstItem="JAG-jl-3ew" firstAttribute="leading" secondItem="jmR-bF-o2W" secondAttribute="leading" constant="17" id="wWi-ql-ZH6"/>
@@ -445,7 +442,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7lm-v4-ZUD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1476" y="-911"/>
+            <point key="canvasLocation" x="-1476" y="-911.08374384236458"/>
         </scene>
         <!--Info-->
         <scene sceneID="kao-YH-2rK">
