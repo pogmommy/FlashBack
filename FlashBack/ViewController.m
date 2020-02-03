@@ -317,7 +317,6 @@ NSString *backupNameSelected;
     self.navigationItem._largeTitleAccessoryView = createBackupButton;
     // Do any additional setup after loading the view.
     
-    
     selectedBackupPickerView.delegate=self;
     selectedBackupPickerView.dataSource=self;
     
@@ -325,6 +324,13 @@ NSString *backupNameSelected;
     //_backupFolderArray = @[@"one",@"two",@"three"];
     _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/Library/FlashBack/Backups/" error:nil];
     
+}
+
+- (void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    [[selectedBackupPickerView.subviews objectAtIndex:1] setBackgroundColor:[UIColor colorWithWhite:25.f/225.f alpha:0.5]];
+    [[selectedBackupPickerView.subviews objectAtIndex:2] setBackgroundColor:[UIColor colorWithWhite:25.f/225.f alpha:0.5]];
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
