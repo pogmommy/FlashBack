@@ -37,7 +37,7 @@ NSString *backupNameSelected;
             NSString *newBackupName=[[createBackupAlert textFields][0] text];
             
             if([[[createBackupAlert textFields][0] text] isEqual:@""]){
-                NSLog(@"empty backup name!");
+                NSLog(@"Empty backup name!");
             }
             else{
                 NSLog(@"Backup name is good!");
@@ -52,13 +52,13 @@ NSString *backupNameSelected;
                 
                 UIAlertController * finishedCreateAlert=   [UIAlertController
                                                             alertControllerWithTitle:@"Backup Creation Completed"
-                                                            message:@"The backup has been successfully created"
+                                                            message:@"The backup has been successfully created!"
                                                             preferredStyle:UIAlertControllerStyleAlert];
                 
                 UIAlertAction* ok = [UIAlertAction okActionWithHandler:^(UIAlertAction * action)
                                      {
                                          
-                                         _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/Library/FlashBack/Backups/" error:nil];
+                                         _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"var/mobile/Library/FlashBack/Backups/" error:nil];
                                          [self->selectedBackupPickerView reloadAllComponents];
                                          
                                          [finishedCreateAlert dismissViewControllerAnimated:YES completion:nil];
@@ -170,7 +170,7 @@ NSString *backupNameSelected;
                                  
                                  UIAlertController * finishedUpdateAlert=   [UIAlertController
                                                                              alertControllerWithTitle:@"Backup Update Completed"
-                                                                             message:@"The backup has been successfully updated"
+                                                                             message:@"The backup has been successfully updated!"
                                                                              preferredStyle:UIAlertControllerStyleAlert];
                                  
                                  UIAlertAction* ok = [UIAlertAction okActionWithHandler:^(UIAlertAction * action)
@@ -211,7 +211,7 @@ NSString *backupNameSelected;
             
             UIAlertController * packageBackupAlert=   [UIAlertController
                                                        alertControllerWithTitle:@"Package Backup"
-                                                       message:@"This will package the selected backup to a DEB file."
+                                                       message:@"This will package the selected backup to a .deb file."
                                                        preferredStyle:UIAlertControllerStyleAlert];
             
             UIAlertAction* ok = [UIAlertAction okActionWithHandler:^(UIAlertAction * action)
@@ -277,7 +277,7 @@ NSString *backupNameSelected;
                              
                              UIAlertController * deleteFinishedAlert=   [UIAlertController
                                                                          alertControllerWithTitle:@"Backup Deleted"
-                                                                         message:@"The backup has been deleted successfully"
+                                                                         message:@"The backup has been deleted successfully."
                                                                          preferredStyle:UIAlertControllerStyleAlert];
                              
                              UIAlertAction* okey = [UIAlertAction okActionWithHandler:^(UIAlertAction * action)
