@@ -58,7 +58,7 @@ NSString *backupNameSelected;
                 UIAlertAction* ok = [UIAlertAction okActionWithHandler:^(UIAlertAction * action)
                                      {
                                          
-                                         _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"var/mobile/Library/FlashBack/Backups/" error:nil];
+                                         _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"Library/FlashBack/Backups/" error:nil];
                                          [self->selectedBackupPickerView reloadAllComponents];
                                          
                                          [finishedCreateAlert dismissViewControllerAnimated:YES completion:nil];
