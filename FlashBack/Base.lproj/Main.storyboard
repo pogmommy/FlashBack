@@ -23,7 +23,7 @@
                             <tableViewSection headerTitle="Credits" id="vtb-eh-6qJ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="ZgX-SF-mO0" customClass="SpecialTableViewCell">
-                                        <rect key="frame" x="16" y="55.333332061767578" width="343" height="64"/>
+                                        <rect key="frame" x="0.0" y="55.333332061767578" width="343" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZgX-SF-mO0" id="opI-gH-aYO">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="64"/>
@@ -70,7 +70,7 @@
                                         <accessibility key="accessibilityConfiguration" hint="Open Micah Gomez's Twitter Profile"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="FgS-UP-6hP" customClass="SpecialTableViewCell">
-                                        <rect key="frame" x="16" y="119.33333206176758" width="343" height="64"/>
+                                        <rect key="frame" x="0.0" y="119.33333206176758" width="343" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FgS-UP-6hP" id="ARQ-iD-IHS">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="64"/>
@@ -347,7 +347,7 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="111" id="eOl-ub-8Lx" customClass="SpecialTableViewCell">
-                                        <rect key="frame" x="0.0" y="755.66666412353516" width="343" height="111"/>
+                                        <rect key="frame" x="16" y="755.66666412353516" width="343" height="111"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eOl-ub-8Lx" id="Pky-GJ-d5C">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="111"/>
@@ -389,7 +389,7 @@
                                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="92" id="IAU-yc-hFB" customClass="SpecialTableViewCell">
-                                        <rect key="frame" x="0.0" y="866.66666412353516" width="343" height="92"/>
+                                        <rect key="frame" x="16" y="866.66666412353516" width="343" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IAU-yc-hFB" id="mm7-6E-mnE">
                                             <rect key="frame" x="0.0" y="0.0" width="343" height="92"/>

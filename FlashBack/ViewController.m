@@ -58,7 +58,7 @@ NSString *backupNameSelected;
                 UIAlertAction* ok = [UIAlertAction okActionWithHandler:^(UIAlertAction * action)
                                      {
                                          
-                                         _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"Library/FlashBack/Backups/" error:nil];
+                                         _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/var/mobile/Library/FlashBack/Backups/" error:nil];
                                          [self->selectedBackupPickerView reloadAllComponents];
                                          
                                          [finishedCreateAlert dismissViewControllerAnimated:YES completion:nil];
@@ -176,7 +176,7 @@ NSString *backupNameSelected;
                                  UIAlertAction* ok = [UIAlertAction okActionWithHandler:^(UIAlertAction * action)
                                                       {
                                                           
-                                                          _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/Library/FlashBack/Backups/" error:nil];
+                                                          _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/var/mobile/Library/FlashBack/Backups/" error:nil];
                                                           [self->selectedBackupPickerView reloadAllComponents];
                                                       }];
                                  [finishedUpdateAlert addAction:ok];
@@ -283,7 +283,7 @@ NSString *backupNameSelected;
                              UIAlertAction* okey = [UIAlertAction okActionWithHandler:^(UIAlertAction * action)
                                                     {
                                                         
-                                                        _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/Library/FlashBack/Backups/" error:nil];
+                                                        _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/var/mobile/Library/FlashBack/Backups/" error:nil];
                                                         [self->selectedBackupPickerView reloadAllComponents];
                                                         
                                                         [deleteFinishedAlert dismissViewControllerAnimated:YES completion:nil];
@@ -323,7 +323,7 @@ NSString *backupNameSelected;
     
     // MARK: List of Backups is found and added to this array
     //_backupFolderArray = @[@"one",@"two",@"three"];
-    _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/Library/FlashBack/Backups/" error:nil];
+    _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/var/mobile/Library/FlashBack/Backups/" error:nil];
     
 }
 
@@ -340,7 +340,7 @@ NSString *backupNameSelected;
     backupNameSelected = [_backupFolderArray objectAtIndex:row];
     selectedBackupText.text=backupNameSelected;
     
-    selectedBackupURL = [NSMutableString stringWithString: @"/Library/FlashBack/Backups/"];
+    selectedBackupURL = [NSMutableString stringWithString: @"/var/mobile/Library/FlashBack/Backups/"];
     [selectedBackupURL appendString: backupNameSelected];
     
     selectedBackupImageURL=selectedBackupURL;
