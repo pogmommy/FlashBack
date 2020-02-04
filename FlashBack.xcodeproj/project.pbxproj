@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		935A57C423E6A8AE00AA2C7D /* UIAlertAction+Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 935A57C323E6A8AE00AA2C7D /* UIAlertAction+Common.m */; };
+		935A57C723E7510600AA2C7D /* SpecialButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 935A57C623E7510600AA2C7D /* SpecialButton.m */; };
+		935A57CA23E761D300AA2C7D /* SpecialTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 935A57C923E761D300AA2C7D /* SpecialTableViewCell.m */; };
 		93666BE123CFC98B004511C5 /* InfoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93666BE023CFC98B004511C5 /* InfoTableViewController.m */; };
 		93891D9523B16D76001480E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93891D9323B16D76001480E8 /* Main.storyboard */; };
 		93AAC8B923DBF848008F8FED /* CircleImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AAC8B823DBF848008F8FED /* CircleImageView.m */; };
@@ -42,6 +45,12 @@
 /* Begin PBXFileReference section */
 		812AE756A45667D1A5844EDE /* Pods-FlashBack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashBack.release.xcconfig"; path = "Target Support Files/Pods-FlashBack/Pods-FlashBack.release.xcconfig"; sourceTree = "<group>"; };
 		9318182E23B85E8100E3F260 /* UINavigationItem+LargeAccessoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+LargeAccessoryView.h"; sourceTree = "<group>"; };
+		935A57C223E6A8AE00AA2C7D /* UIAlertAction+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+Common.h"; sourceTree = "<group>"; };
+		935A57C323E6A8AE00AA2C7D /* UIAlertAction+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+Common.m"; sourceTree = "<group>"; };
+		935A57C523E7510600AA2C7D /* SpecialButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecialButton.h; sourceTree = "<group>"; };
+		935A57C623E7510600AA2C7D /* SpecialButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecialButton.m; sourceTree = "<group>"; };
+		935A57C823E761D300AA2C7D /* SpecialTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecialTableViewCell.h; sourceTree = "<group>"; };
+		935A57C923E761D300AA2C7D /* SpecialTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecialTableViewCell.m; sourceTree = "<group>"; };
 		93666BDF23CFC98B004511C5 /* InfoTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoTableViewController.h; sourceTree = "<group>"; };
 		93666BE023CFC98B004511C5 /* InfoTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewController.m; sourceTree = "<group>"; };
 		93891D9423B16D76001480E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FlashBack/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -126,17 +135,23 @@
 			children = (
 				93F6038323E1090100479F31 /* FlashBack.entitlements */,
 				93891D9823B197C5001480E8 /* sign.entitlements */,
-				BDCF0696224B544F00ED9A62 /* AppDelegate.m */,
 				BDCF0695224B544F00ED9A62 /* AppDelegate.h */,
+				BDCF0696224B544F00ED9A62 /* AppDelegate.m */,
 				93891D9623B19319001480E8 /* UIBackgroundStyle.h */,
 				9318182E23B85E8100E3F260 /* UINavigationItem+LargeAccessoryView.h */,
 				BDCF0698224B544F00ED9A62 /* ViewController.h */,
 				BDCF0699224B544F00ED9A62 /* ViewController.m */,
-				93666BDF23CFC98B004511C5 /* InfoTableViewController.h */,
+				935A57C223E6A8AE00AA2C7D /* UIAlertAction+Common.h */,
+				935A57C323E6A8AE00AA2C7D /* UIAlertAction+Common.m */,
 				93666BE023CFC98B004511C5 /* InfoTableViewController.m */,
+				93666BDF23CFC98B004511C5 /* InfoTableViewController.h */,
 				93AAC8B723DBF848008F8FED /* CircleImageView.h */,
 				93AAC8B823DBF848008F8FED /* CircleImageView.m */,
 				BDCF069B224B544F00ED9A62 /* Main.storyboard */,
+				935A57C823E761D300AA2C7D /* SpecialTableViewCell.h */,
+				935A57C923E761D300AA2C7D /* SpecialTableViewCell.m */,
+				935A57C523E7510600AA2C7D /* SpecialButton.h */,
+				935A57C623E7510600AA2C7D /* SpecialButton.m */,
 				BDCF069E224B545100ED9A62 /* Assets.xcassets */,
 				BDCF06A0224B545100ED9A62 /* LaunchScreen.storyboard */,
 				BDCF06A3224B545100ED9A62 /* Info.plist */,
@@ -340,11 +355,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDCF069A224B544F00ED9A62 /* ViewController.m in Sources */,
+				935A57C423E6A8AE00AA2C7D /* UIAlertAction+Common.m in Sources */,
 				BDCF06A5224B545100ED9A62 /* main.m in Sources */,
+				935A57CA23E761D300AA2C7D /* SpecialTableViewCell.m in Sources */,
 				BD5BEF5E23E2981E0014EE51 /* globalVars.m in Sources */,
 				BDCF0697224B544F00ED9A62 /* AppDelegate.m in Sources */,
 				93AAC8B923DBF848008F8FED /* CircleImageView.m in Sources */,
 				93666BE123CFC98B004511C5 /* InfoTableViewController.m in Sources */,
+				935A57C723E7510600AA2C7D /* SpecialButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
