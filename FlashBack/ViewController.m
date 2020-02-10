@@ -310,12 +310,24 @@ NSString *backupNameSelected;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    if (@available(iOS 11.0, *)) {
+        if (self.navigationController.navigationBar.prefersLargeTitles){
+            UIButton *createBackupButton = [UIButton buttonWithType:UIButtonTypeSystem];
+            [createBackupButton addTarget:self action:@selector(createBackup:) forControlEvents:UIControlEventTouchUpInside];
+            [createBackupButton setImage:[UIImage imageNamed:@"create"] forState:UIControlStateNormal];
+            createBackupButton.tintColor = [UIColor systemBlueColor];
+            self.navigationItem._largeTitleAccessoryView = createBackupButton;
+        }
+        else {
+            self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"create"] style:UIBarButtonItemStylePlain target:self action:@selector(createBackup:)];
+        }
+    } else {
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"create"] style:UIBarButtonItemStylePlain target:self action:@selector(createBackup:)];
+    }
 
-    UIButton *createBackupButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [createBackupButton addTarget:self action:@selector(createBackup:) forControlEvents:UIControlEventTouchUpInside];
-    [createBackupButton setImage:[UIImage imageNamed:@"create"] forState:UIControlStateNormal];
-    createBackupButton.tintColor = [UIColor systemBlueColor];
-    self.navigationItem._largeTitleAccessoryView = createBackupButton;
+        
+    
     // Do any additional setup after loading the view.
     
     selectedBackupPickerView.delegate=self;
