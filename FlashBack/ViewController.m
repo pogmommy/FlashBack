@@ -105,31 +105,36 @@ NSString *backupNameSelected;
 		UIAlertAction* ok = [UIAlertAction okActionWithHandler:^(UIAlertAction * action)
 							 {
 			
-			//RUN RESTORE SCRIPT
-			
-			NSTask *restoreTask = [[NSTask alloc] init];
-			[restoreTask setLaunchPath:@"/bin/bash"];
-			[restoreTask setArguments:@[ @"FBRestore", backupNameSelected, stringTweaksEnabled, stringIconsEnabled, stringWallpaperEnabled]];
-			[restoreTask launch];
-			[restoreTask waitUntilExit];
-			
-			NSTask *killPrefsTask = [[NSTask alloc] init];
-			[killPrefsTask setLaunchPath:@"/bin/bash"];
-			[killPrefsTask setArguments:@[ @"killall", @"cfprefsd"]];
-			[killPrefsTask launch];
-			[killPrefsTask waitUntilExit];
-			
-			NSTask *respringTask = [[NSTask alloc] init];
-			[respringTask setLaunchPath:@"/bin/bash"];
-			[respringTask setArguments:@[ @"sbreload"]];
-			[respringTask launch];
-			[respringTask waitUntilExit];
 			
 			UIAlertController * finishedRestoreAlert=   [UIAlertController
 														 alertControllerWithTitle:@"Restoring from backup"
 														 message:@"Your device will respring when the process is completed."
 														 preferredStyle:UIAlertControllerStyleAlert];
 			[self presentViewController:finishedRestoreAlert animated:YES completion:nil];
+			
+			//RUN RESTORE SCRIPT
+			
+			NSLog(@"Running script");
+			NSTask *restoreTask = [[NSTask alloc] init];
+			[restoreTask setLaunchPath:@"/bin/bash"];
+			[restoreTask setArguments:@[ @"FBRestore", backupNameSelected, stringTweaksEnabled, stringIconsEnabled, stringWallpaperEnabled]];
+			[restoreTask launch];
+			[restoreTask waitUntilExit];
+			
+			/*NSLog(@"killing xenhtml prefs");
+			NSTask *killPrefsTask = [[NSTask alloc] init];
+			[killPrefsTask setLaunchPath:@"/bin/bash"];
+			[killPrefsTask setArguments:@[ @"killall", @"cfprefsd"]];
+			[killPrefsTask launch];
+			[killPrefsTask waitUntilExit];*/
+			
+			NSLog(@"time to respring");
+			NSTask *respringTask = [[NSTask alloc] init];
+			[respringTask setLaunchPath:@"/bin/bash"];
+			[respringTask setArguments:@[ @"killall", @"backboardd"]];
+			[respringTask launch];
+			[respringTask waitUntilExit];
+			
 			
 			[restoreBackupAlert dismissViewControllerAnimated:YES completion:nil];
 			
