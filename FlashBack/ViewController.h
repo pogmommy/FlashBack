@@ -17,6 +17,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *FlashBackTitle;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navigationBar;
 
 @end
 
