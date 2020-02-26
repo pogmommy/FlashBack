@@ -17,7 +17,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+	setuid(0);
+	setgid(0);
+	
+	// Override point for customization after application launch.
     [application _setBackgroundStyle:UIBackgroundStyleExtraDarkBlur];
     
     UIColor *barBackground = [UIColor colorWithWhite:0 alpha:0.3];

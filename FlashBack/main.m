@@ -1,16 +1,11 @@
-//
-//  main.m
-//  FlashBack
-//
-//  Created by Micah Gomez on 3/27/19.
-//  Copyright © 2019 Micah Gomez. All rights reserved.
-//
-
 #import <UIKit/UIKit.h>
+#import <dlfcn.h>
+#import <sys/stat.h>
+#import <unistd.h>
 #import "AppDelegate.h"
-#include <dlfcn.h>
-
 #define FLAG_PLATFORMIZE (1 << 1)
+
+// Special thanks to PsychoTea (@IBSparkles) for getting root on kernel patch jailbreaks, as well as for both Electra's and Meridian's "kppless" jailbreakd daemon.
 
 void platformize_me() {
     void* handle = dlopen("/usr/lib/libjailbreak.dylib", RTLD_LAZY);
@@ -46,13 +41,18 @@ void patch_setuid() {
 
 int main(int argc, char * argv[]) {
     @autoreleasepool {
-        if ([[NSFileManager defaultManager] fileExistsAtPath:@"/usr/lib/libjailbreak.dylib"]){
+        setuid(0);
+        
+        if (getuid() != 0) {
+            //Gets setuid on Electra
+            patch_setuid();
             platformize_me();
+            setuid(0); // electra requires you to call setuid again
+        }
+        //Gets setuid on Meridian
+        if (getuid() != 0) {
             patch_setuid();
         }
-        
-        setuid(0);
-        setgid(0);
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
 }

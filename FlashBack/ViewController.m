@@ -126,14 +126,14 @@ NSString *backupNameSelected;
 			[killPrefsTask setLaunchPath:@"/bin/bash"];
 			[killPrefsTask setArguments:@[ @"killall", @"cfprefsd"]];
 			[killPrefsTask launch];
-			[killPrefsTask waitUntilExit];*/
+			[killPrefsTask waitUntilExit];
 			
 			NSLog(@"time to respring");
 			NSTask *respringTask = [[NSTask alloc] init];
-			[respringTask setLaunchPath:@"/bin/bash"];
+			[respringTask setLaunchPath:@"/bin/"];
 			[respringTask setArguments:@[ @"killall", @"backboardd"]];
 			[respringTask launch];
-			[respringTask waitUntilExit];
+			[respringTask waitUntilExit];*/
 			
 			
 			[restoreBackupAlert dismissViewControllerAnimated:YES completion:nil];
