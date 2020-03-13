@@ -15,6 +15,10 @@
 #import "UIAlertAction+Common.h"
 #import "UINavigationItem+LargeAccessoryView.h"
 #import "globalVars.h"
+#import <objc/runtime.h>
+#import "SBSRelaunchAction.h"
+#import "SBSRestartRenderServerAction.h"
+#import "FBSSystemService.h"
 
 
 NSArray *_backupFolderArray;
@@ -121,19 +125,23 @@ NSString *backupNameSelected;
 			[restoreTask launch];
 			[restoreTask waitUntilExit];
 			
-			/*NSLog(@"killing xenhtml prefs");
+			NSLog(@"killing xenhtml prefs");
 			NSTask *killPrefsTask = [[NSTask alloc] init];
-			[killPrefsTask setLaunchPath:@"/bin/bash"];
-			[killPrefsTask setArguments:@[ @"killall", @"cfprefsd"]];
+			[killPrefsTask setLaunchPath:@"/usr/bin/killall"];
+			[killPrefsTask setArguments:@[@"killall", @"cfprefsd"]];
 			[killPrefsTask launch];
 			[killPrefsTask waitUntilExit];
 			
 			NSLog(@"time to respring");
-			NSTask *respringTask = [[NSTask alloc] init];
-			[respringTask setLaunchPath:@"/bin/"];
-			[respringTask setArguments:@[ @"killall", @"backboardd"]];
-			[respringTask launch];
-			[respringTask waitUntilExit];*/
+			SBSRelaunchAction *restartAction;
+
+            if (objc_getClass("SBSRelaunchAction")) { // 9.3+
+              restartAction = [objc_getClass("SBSRelaunchAction") actionWithReason:@"RestartRenderServer" options:SBSRelaunchActionOptionsFadeToBlackTransition targetURL:nil];
+            } else { // 8.0 – 9.3
+              restartAction = [objc_getClass("SBSRestartRenderServerAction") restartActionWithTargetRelaunchURL:nil];
+            }
+
+            [[objc_getClass("FBSSystemService") sharedService] sendActions:[NSSet setWithObject:restartAction] withResult:nil];
 			
 			
 			[restoreBackupAlert dismissViewControllerAnimated:YES completion:nil];

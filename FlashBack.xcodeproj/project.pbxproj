@@ -45,6 +45,7 @@
 /* Begin PBXFileReference section */
 		812AE756A45667D1A5844EDE /* Pods-FlashBack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashBack.release.xcconfig"; path = "Target Support Files/Pods-FlashBack/Pods-FlashBack.release.xcconfig"; sourceTree = "<group>"; };
 		9318182E23B85E8100E3F260 /* UINavigationItem+LargeAccessoryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationItem+LargeAccessoryView.h"; sourceTree = "<group>"; };
+		9354F89D2419CA5700D5F8DA /* runtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = runtime.h; path = ../../../../theos/sdks/iPhoneOS12.2.sdk/usr/include/objc/runtime.h; sourceTree = "<group>"; };
 		935A57C223E6A8AE00AA2C7D /* UIAlertAction+Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIAlertAction+Common.h"; sourceTree = "<group>"; };
 		935A57C323E6A8AE00AA2C7D /* UIAlertAction+Common.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIAlertAction+Common.m"; sourceTree = "<group>"; };
 		935A57C523E7510600AA2C7D /* SpecialButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecialButton.h; sourceTree = "<group>"; };
@@ -53,6 +54,10 @@
 		935A57C923E761D300AA2C7D /* SpecialTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecialTableViewCell.m; sourceTree = "<group>"; };
 		93666BDF23CFC98B004511C5 /* InfoTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoTableViewController.h; sourceTree = "<group>"; };
 		93666BE023CFC98B004511C5 /* InfoTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewController.m; sourceTree = "<group>"; };
+		93678D76241AD03400C8B28F /* SBSRestartRenderServerAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SBSRestartRenderServerAction.h; path = "../../../../Downloads/headers-master/SpringBoardServices/SBSRestartRenderServerAction.h"; sourceTree = "<group>"; };
+		93678D77241AD04800C8B28F /* SBSRelaunchAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SBSRelaunchAction.h; path = "../../../../Downloads/headers-master/SpringBoardServices/SBSRelaunchAction.h"; sourceTree = "<group>"; };
+		93678D78241AD07300C8B28F /* FBSSystemService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FBSSystemService.h; path = "../../../../Downloads/headers-master/FrontBoardServices/FBSSystemService.h"; sourceTree = "<group>"; };
+		93678D79241AD0E600C8B28F /* BSAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BSAction.h; path = "../../../../Downloads/headers-master/BaseBoard/BSAction.h"; sourceTree = "<group>"; };
 		93891D9423B16D76001480E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FlashBack/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93891D9623B19319001480E8 /* UIBackgroundStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIBackgroundStyle.h; sourceTree = "<group>"; };
 		93891D9823B197C5001480E8 /* sign.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = sign.entitlements; path = "../../FlashBack-master/FlashBack/sign.entitlements"; sourceTree = "<group>"; };
@@ -144,7 +149,11 @@
 				935A57C223E6A8AE00AA2C7D /* UIAlertAction+Common.h */,
 				935A57C323E6A8AE00AA2C7D /* UIAlertAction+Common.m */,
 				93666BE023CFC98B004511C5 /* InfoTableViewController.m */,
+				93678D77241AD04800C8B28F /* SBSRelaunchAction.h */,
+				93678D78241AD07300C8B28F /* FBSSystemService.h */,
+				93678D76241AD03400C8B28F /* SBSRestartRenderServerAction.h */,
 				93666BDF23CFC98B004511C5 /* InfoTableViewController.h */,
+				93678D79241AD0E600C8B28F /* BSAction.h */,
 				93AAC8B723DBF848008F8FED /* CircleImageView.h */,
 				93AAC8B823DBF848008F8FED /* CircleImageView.m */,
 				BDCF069B224B544F00ED9A62 /* Main.storyboard */,
@@ -156,6 +165,7 @@
 				BDCF06A0224B545100ED9A62 /* LaunchScreen.storyboard */,
 				BDCF06A3224B545100ED9A62 /* Info.plist */,
 				BDCF06A4224B545100ED9A62 /* main.m */,
+				9354F89D2419CA5700D5F8DA /* runtime.h */,
 				BD5BEF5C23E297D90014EE51 /* globalVars.h */,
 				BD5BEF5D23E2981E0014EE51 /* globalVars.m */,
 			);
@@ -457,6 +467,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -516,6 +527,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -546,7 +558,7 @@
 				CODE_SIGN_ENTITLEMENTS = FlashBack/FlashBack.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YCX729N7CK;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"/Users/micahgomez/Downloads/iOS-Runtime-Headers-master/PrivateFrameworks\"/**",
@@ -557,8 +569,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mpg13.FlashBack;
 				MARKETING_VERSION = 4.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mpg13.FlashBack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
@@ -575,7 +587,7 @@
 				CODE_SIGN_ENTITLEMENTS = FlashBack/FlashBack.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YCX729N7CK;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"/Users/micahgomez/Downloads/iOS-Runtime-Headers-master/PrivateFrameworks\"/**",
@@ -586,8 +598,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.mpg13.FlashBack;
 				MARKETING_VERSION = 4.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mpg13.FlashBack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = NO;
