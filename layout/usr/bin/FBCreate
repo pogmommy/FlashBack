@@ -1,0 +1,37 @@
+#!/bin/bash
+
+
+shopt -s extglob # "Shell option set extglob" https://www.linuxjournal.com/content/bash-extended-globbing
+
+set -f # "Disable file name generation (globbing)."
+
+BACKUPNAME=$1
+
+set +f
+FLASHBACKDIR="/var/mobile/Library/FlashBack"
+BKPVERSION="v3"
+BACKUPLOCATION=$FLASHBACKDIR/Backups/$BACKUPNAME
+mkdir -p $BACKUPLOCATION
+mkdir -p $BACKUPLOCATION/{Preferences,SBFolder} || STATUS="mkdir failed"
+echo -e "\n\e[0;100m[!]\e[0m \e[104mCopying to $BACKUPLOCATION\e[0m"
+
+cp -rf "/var/mobile/Library/Preferences/"!(com.apple*|com.saurik*|ckkeyrolld|nfcd|UITextInputContextIdentifiers|.GlobalPreferences).plist $BACKUPLOCATION/Preferences/ || STATUS="cp failed" #copy all non-apple Plists to Preference folder within backup haha
+cp -rf "/var/mobile/Library/Preferences/"*(*.jpg|*.png|*.gif) $BACKUPLOCATION/Preferences/ &>/dev/null    #copy all images to Preference folder within backup
+cp -rf /var/mobile/Library/SpringBoard/@(*Icon*|*Background*|SB*) $BACKUPLOCATION/SBFolder/ || STATUS="cp failed"        #copy IconState Plist to SBFolder folder within backup
+
+if [[ -d /var/mobile/Documents/HomePlus/ ]]
+then
+mkdir -p $BACKUPLOCATION/HomePlusPreferences
+cp -rf "/var/mobile/Documents/HomePlus/"* "$BACKUPLOCATION/HomePlusPreferences/" #copy homeplus prefs
+fi
+
+if [[ -d /var/mobile/Media/AutoWall/ ]]
+then
+mkdir -p $BACKUPLOCATION/AutoWall
+cp -rf "/var/mobile/Media/AutoWall/"* "$BACKUPLOCATION/AutoWall/"
+fi
+touch $BACKUPLOCATION/$BKPVERSION
+
+echo -e "\n\e[104m Success! \e[0m \n"
+
+exit 0

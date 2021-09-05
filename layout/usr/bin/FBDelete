@@ -1,0 +1,18 @@
+#!/bin/bash
+
+
+shopt -s extglob # "Shell option set extglob" https://www.linuxjournal.com/content/bash-extended-globbing
+
+set -f # "Disable file name generation (globbing)."
+
+DELETEBACKUP=$1
+
+set +f
+FLASHBACKDIR="/var/mobile/Library/FlashBack"
+DELETELOCATION=$FLASHBACKDIR/Backups/$DELETEBACKUP
+
+# COPY BACKUP TO SYSTEM
+
+rm -r $DELETELOCATION
+
+exit 0

@@ -54,15 +54,15 @@
 		935A57C923E761D300AA2C7D /* SpecialTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecialTableViewCell.m; sourceTree = "<group>"; };
 		93666BDF23CFC98B004511C5 /* InfoTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoTableViewController.h; sourceTree = "<group>"; };
 		93666BE023CFC98B004511C5 /* InfoTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoTableViewController.m; sourceTree = "<group>"; };
-		93678D76241AD03400C8B28F /* SBSRestartRenderServerAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SBSRestartRenderServerAction.h; path = "../../../../Downloads/headers-master/SpringBoardServices/SBSRestartRenderServerAction.h"; sourceTree = "<group>"; };
-		93678D77241AD04800C8B28F /* SBSRelaunchAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SBSRelaunchAction.h; path = "../../../../Downloads/headers-master/SpringBoardServices/SBSRelaunchAction.h"; sourceTree = "<group>"; };
-		93678D78241AD07300C8B28F /* FBSSystemService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = FBSSystemService.h; path = "../../../../Downloads/headers-master/FrontBoardServices/FBSSystemService.h"; sourceTree = "<group>"; };
-		93678D79241AD0E600C8B28F /* BSAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BSAction.h; path = "../../../../Downloads/headers-master/BaseBoard/BSAction.h"; sourceTree = "<group>"; };
 		93891D9423B16D76001480E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = FlashBack/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		93891D9623B19319001480E8 /* UIBackgroundStyle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIBackgroundStyle.h; sourceTree = "<group>"; };
-		93891D9823B197C5001480E8 /* sign.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = sign.entitlements; path = "../../FlashBack-master/FlashBack/sign.entitlements"; sourceTree = "<group>"; };
 		93AAC8B723DBF848008F8FED /* CircleImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CircleImageView.h; sourceTree = "<group>"; };
 		93AAC8B823DBF848008F8FED /* CircleImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CircleImageView.m; sourceTree = "<group>"; };
+		93D28AE626E25CF700D1561C /* sign.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = sign.entitlements; sourceTree = "<group>"; };
+		93D28AE726E452D200D1561C /* BSAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSAction.h; sourceTree = "<group>"; };
+		93D28AE926E4533E00D1561C /* SBSRelaunchAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSRelaunchAction.h; sourceTree = "<group>"; };
+		93D28AEA26E4534F00D1561C /* SBSRestartRenderServerAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBSRestartRenderServerAction.h; sourceTree = "<group>"; };
+		93D28AEB26E4536800D1561C /* FBSSystemService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBSSystemService.h; sourceTree = "<group>"; };
 		93F6038323E1090100479F31 /* FlashBack.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FlashBack.entitlements; sourceTree = "<group>"; };
 		A5303A83F5FA846DCC89DB82 /* Pods-FlashBack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashBack.debug.xcconfig"; path = "Target Support Files/Pods-FlashBack/Pods-FlashBack.debug.xcconfig"; sourceTree = "<group>"; };
 		BD5BEF5C23E297D90014EE51 /* globalVars.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = globalVars.h; sourceTree = "<group>"; };
@@ -139,21 +139,21 @@
 			isa = PBXGroup;
 			children = (
 				93F6038323E1090100479F31 /* FlashBack.entitlements */,
-				93891D9823B197C5001480E8 /* sign.entitlements */,
 				BDCF0695224B544F00ED9A62 /* AppDelegate.h */,
 				BDCF0696224B544F00ED9A62 /* AppDelegate.m */,
 				93891D9623B19319001480E8 /* UIBackgroundStyle.h */,
 				9318182E23B85E8100E3F260 /* UINavigationItem+LargeAccessoryView.h */,
+				93D28AE726E452D200D1561C /* BSAction.h */,
 				BDCF0698224B544F00ED9A62 /* ViewController.h */,
 				BDCF0699224B544F00ED9A62 /* ViewController.m */,
 				935A57C223E6A8AE00AA2C7D /* UIAlertAction+Common.h */,
 				935A57C323E6A8AE00AA2C7D /* UIAlertAction+Common.m */,
 				93666BE023CFC98B004511C5 /* InfoTableViewController.m */,
-				93678D77241AD04800C8B28F /* SBSRelaunchAction.h */,
-				93678D78241AD07300C8B28F /* FBSSystemService.h */,
-				93678D76241AD03400C8B28F /* SBSRestartRenderServerAction.h */,
+				93D28AE626E25CF700D1561C /* sign.entitlements */,
+				93D28AE926E4533E00D1561C /* SBSRelaunchAction.h */,
+				93D28AEB26E4536800D1561C /* FBSSystemService.h */,
+				93D28AEA26E4534F00D1561C /* SBSRestartRenderServerAction.h */,
 				93666BDF23CFC98B004511C5 /* InfoTableViewController.h */,
-				93678D79241AD0E600C8B28F /* BSAction.h */,
 				93AAC8B723DBF848008F8FED /* CircleImageView.h */,
 				93AAC8B823DBF848008F8FED /* CircleImageView.m */,
 				BDCF069B224B544F00ED9A62 /* Main.storyboard */,
@@ -569,7 +569,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.0.0;
+				MARKETING_VERSION = 4.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mpg13.FlashBack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -598,7 +598,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.0.0;
+				MARKETING_VERSION = 4.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.mpg13.FlashBack;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

@@ -4,3 +4,5 @@ FlashBack/.DS_Store
 FlashBack.xcodeproj/project.pbxproj
 FlashBack/.DS_Store
 FlashBack/Assets.xcassets/.DS_Store
+.theos
+packages

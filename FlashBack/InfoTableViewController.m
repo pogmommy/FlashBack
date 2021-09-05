@@ -41,10 +41,10 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self.micahImageView sd_setImageWithURL:[NSURL URLWithString:@"https://pbs.twimg.com/profile_images/1212132374059704320/qqFaZi2a_400x400.jpg"]
+    [self.micahImageView sd_setImageWithURL:[NSURL URLWithString:@"https://github.com/mpg13.png"]
     placeholderImage:nil];
 
-   [self.aaronImageView sd_setImageWithURL:[NSURL URLWithString:@"https://pbs.twimg.com/profile_images/1195388235335254016/6DAkWcSq_400x400.jpg"]
+   [self.aaronImageView sd_setImageWithURL:[NSURL URLWithString:@"https://github.com/23aaron.png"]
     placeholderImage:nil];
     
 }

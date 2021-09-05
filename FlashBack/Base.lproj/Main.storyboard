@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GLq-WK-cLg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GLq-WK-cLg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment version="2304" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,7 +24,7 @@
                             <tableViewSection headerTitle="Credits" id="vtb-eh-6qJ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="ZgX-SF-mO0" customClass="SpecialTableViewCell">
-                                        <rect key="frame" x="20" y="55.5" width="374" height="64"/>
+                                        <rect key="frame" x="20" y="49.5" width="374" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZgX-SF-mO0" id="opI-gH-aYO">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="64"/>
@@ -43,7 +44,7 @@
                                                             <rect key="frame" x="68" y="3.5" width="266" height="45"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Micah Gomez" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXc-ae-0bA">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="117" height="21.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="116.5" height="21.5"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     <nil key="highlightedColor"/>
@@ -66,11 +67,11 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="dpQ-mP-pkH" secondAttribute="trailing" id="akj-b8-Q3S"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="backgroundColor" systemColor="darkTextColor"/>
                                         <accessibility key="accessibilityConfiguration" hint="Open Micah Gomez's Twitter Profile"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="64" id="FgS-UP-6hP" customClass="SpecialTableViewCell">
-                                        <rect key="frame" x="20" y="119.5" width="374" height="64"/>
+                                        <rect key="frame" x="20" y="113.5" width="374" height="64"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FgS-UP-6hP" id="ARQ-iD-IHS">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="64"/>
@@ -91,7 +92,7 @@
                                                             <rect key="frame" x="68" y="3.5" width="266" height="45"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23 Aaron" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHR-QF-xHP">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="79" height="21.5"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="78.5" height="21.5"/>
                                                                     <accessibility key="accessibilityConfiguration" label="23 Aaron"/>
                                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -115,14 +116,14 @@
                                                 <constraint firstItem="4dT-Tg-UbJ" firstAttribute="leading" secondItem="ARQ-iD-IHS" secondAttribute="leadingMargin" id="tYC-tx-NX2"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="backgroundColor" systemColor="darkTextColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle="Preferences" id="nHV-QL-JOW">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="6R0-wB-ck5" customClass="SpecialTableViewCell">
-                                        <rect key="frame" x="20" y="239.5" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="227.5" width="374" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6R0-wB-ck5" id="vik-Ph-02b">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -150,10 +151,10 @@
                                                 <constraint firstItem="ST3-y9-ath" firstAttribute="centerY" secondItem="vik-Ph-02b" secondAttribute="centerY" id="WW4-7p-aIK"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="backgroundColor" systemColor="darkTextColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="uLr-5q-GMg" customClass="SpecialTableViewCell">
-                                        <rect key="frame" x="20" y="289.5" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="277.5" width="374" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uLr-5q-GMg" id="M5o-eW-GbF">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -182,10 +183,10 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="wdR-pr-dHK" secondAttribute="trailing" id="m1c-7J-IAU"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="backgroundColor" systemColor="darkTextColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="50" id="7h3-Oq-iC6" customClass="SpecialTableViewCell">
-                                        <rect key="frame" x="20" y="339.5" width="374" height="50"/>
+                                        <rect key="frame" x="20" y="327.5" width="374" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7h3-Oq-iC6" id="987-GG-hqF">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="50"/>
@@ -213,14 +214,14 @@
                                                 <constraint firstItem="AWp-z9-Uju" firstAttribute="leading" secondItem="987-GG-hqF" secondAttribute="leadingMargin" id="x23-Nk-nB3"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="backgroundColor" systemColor="darkTextColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Help" footerTitle="FlashBack 4.0.1" id="t2d-l1-hUX">
+                            <tableViewSection headerTitle="Help" footerTitle="FlashBack 4.0.2" id="t2d-l1-hUX">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="118" id="pxO-QB-H9D" customClass="SpecialTableViewCell">
-                                        <rect key="frame" x="20" y="453" width="374" height="118"/>
+                                        <rect key="frame" x="20" y="435" width="374" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pxO-QB-H9D" id="jmR-bF-o2W">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="118"/>
@@ -265,10 +266,10 @@
                                                 <constraint firstItem="JAG-jl-3ew" firstAttribute="leading" secondItem="jmR-bF-o2W" secondAttribute="leading" constant="17" id="wWi-ql-ZH6"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="backgroundColor" systemColor="darkTextColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="92" id="7rg-CJ-YTz" customClass="SpecialTableViewCell">
-                                        <rect key="frame" x="20" y="571" width="374" height="92"/>
+                                        <rect key="frame" x="20" y="553" width="374" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="7rg-CJ-YTz" id="Vrg-Yb-myZ">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="92"/>
@@ -285,7 +286,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FlashBack" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XIr-ni-HmD">
-                                                    <rect key="frame" x="17" y="11" width="97.5" height="24"/>
+                                                    <rect key="frame" x="17" y="11" width="97" height="24"/>
                                                     <accessibility key="accessibilityConfiguration" label="Restore"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -304,10 +305,10 @@
                                                 <constraint firstItem="gag-8p-PVQ" firstAttribute="centerX" secondItem="Vrg-Yb-myZ" secondAttribute="centerX" id="usu-ly-Rma"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="backgroundColor" systemColor="darkTextColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="93" id="dfF-sw-mhg" customClass="SpecialTableViewCell">
-                                        <rect key="frame" x="20" y="663" width="374" height="93"/>
+                                        <rect key="frame" x="20" y="645" width="374" height="93"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dfF-sw-mhg" id="Nhi-T9-fph">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="93"/>
@@ -324,7 +325,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Update" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W0w-15-wah">
-                                                    <rect key="frame" x="17" y="11" width="69.5" height="24"/>
+                                                    <rect key="frame" x="17" y="11" width="69" height="24"/>
                                                     <accessibility key="accessibilityConfiguration" label="Update"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -344,10 +345,10 @@
                                                 <constraint firstAttribute="bottom" secondItem="MHp-oD-in7" secondAttribute="bottom" constant="11" id="wwj-ac-qCm"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="backgroundColor" systemColor="darkTextColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="111" id="eOl-ub-8Lx" customClass="SpecialTableViewCell">
-                                        <rect key="frame" x="20" y="756" width="374" height="111"/>
+                                        <rect key="frame" x="20" y="738" width="374" height="111"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eOl-ub-8Lx" id="Pky-GJ-d5C">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="111"/>
@@ -386,10 +387,10 @@
                                                 <constraint firstAttribute="bottom" secondItem="CQb-kc-sp6" secondAttribute="bottom" constant="11" id="oEn-rW-MrI"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="backgroundColor" systemColor="darkTextColor"/>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="92" id="IAU-yc-hFB" customClass="SpecialTableViewCell">
-                                        <rect key="frame" x="0.0" y="867" width="374" height="92"/>
+                                        <rect key="frame" x="20" y="849" width="374" height="92"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="IAU-yc-hFB" id="mm7-6E-mnE">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="92"/>
@@ -424,7 +425,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="ZBX-Qm-XVI" secondAttribute="bottom" constant="11" id="pkP-BC-5Sp"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="backgroundColor" systemColor="darkTextColor"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -530,12 +531,12 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qjU-z6-E09">
                                         <rect key="frame" x="30" y="374" width="322" height="422"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMB-Cv-YLA" customClass="SpecialButton">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XMB-Cv-YLA" customClass="SpecialButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="322" height="98"/>
                                                 <accessibility key="accessibilityConfiguration" hint="This button will restore the selected backup onto your device." label="FlashBack"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="31"/>
                                                 <state key="normal" title="FlashBack">
-                                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" systemColor="linkColor"/>
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=compact">
@@ -545,12 +546,12 @@
                                                     <action selector="restoreBackup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JqV-B8-5zg"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="749" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WN9-tU-bOp" customClass="SpecialButton">
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="749" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WN9-tU-bOp" customClass="SpecialButton">
                                                 <rect key="frame" x="0.0" y="108" width="322" height="98"/>
                                                 <accessibility key="accessibilityConfiguration" hint="This button will update the selected backup with the current setup." label="Update"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="31"/>
                                                 <state key="normal" title="Update">
-                                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" systemColor="linkColor"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=compact">
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
@@ -559,12 +560,12 @@
                                                     <action selector="updateBackup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jz6-Fn-uAo"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNN-hV-Kcy" customClass="SpecialButton">
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNN-hV-Kcy" customClass="SpecialButton">
                                                 <rect key="frame" x="0.0" y="216" width="322" height="98"/>
                                                 <accessibility key="accessibilityConfiguration" hint="This button will export the selected backup for later usage or sharing." label="Export"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="31"/>
                                                 <state key="normal" title="Export">
-                                                    <color key="titleColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" systemColor="linkColor"/>
                                                 </state>
                                                 <variation key="heightClass=regular-widthClass=compact">
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
@@ -573,13 +574,13 @@
                                                     <action selector="packageBackup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BGU-Dg-Yyu"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z44-tn-4Km" customClass="SpecialButton">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z44-tn-4Km" customClass="SpecialButton">
                                                 <rect key="frame" x="0.0" y="324" width="322" height="98"/>
                                                 <accessibility key="accessibilityConfiguration" hint="This button will delete the selected backup from your device." label="Delete"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="27"/>
-                                                <color key="tintColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" systemColor="linkColor"/>
                                                 <state key="normal" title="Delete">
-                                                    <color key="titleColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" systemColor="systemRedColor"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="deleteBackup:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IGQ-c1-zGW"/>
@@ -646,6 +647,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -654,7 +656,6 @@
                             <constraint firstItem="Qmu-gf-Vin" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Lov-7U-1uM"/>
                             <constraint firstItem="Qmu-gf-Vin" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="gOh-bO-Sum"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="Lc6-ch-Jun">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -673,5 +674,14 @@
         <image name="bolt" width="25" height="25"/>
         <image name="create" width="30" height="30"/>
         <image name="info" width="23" height="23"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>

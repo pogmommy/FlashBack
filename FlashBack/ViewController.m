@@ -368,8 +368,8 @@ NSString *backupNameSelected;
 - (void)viewDidLayoutSubviews {
 	[super viewDidLayoutSubviews];
 	
+	[[selectedBackupPickerView.subviews objectAtIndex:0] setBackgroundColor:[UIColor colorWithWhite:25.f/225.f alpha:0.5]];
 	[[selectedBackupPickerView.subviews objectAtIndex:1] setBackgroundColor:[UIColor colorWithWhite:25.f/225.f alpha:0.5]];
-	[[selectedBackupPickerView.subviews objectAtIndex:2] setBackgroundColor:[UIColor colorWithWhite:25.f/225.f alpha:0.5]];
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
