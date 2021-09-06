@@ -31,7 +31,6 @@ fi
 # clear caches and respring
 uicache
 recache --no respring &>/dev/null
-#sbreload && exit 0 || killall -9 SpringBoard && exit 0 # Kill the script.
-#fbmobileldrestart
+fbmobileldrestart
 
 exit 0
