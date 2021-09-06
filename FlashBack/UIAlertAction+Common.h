@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@interface UIAlertController (Private)
+
+@property (nonatomic, retain) UIViewController *contentViewController;
+
+@end
+
 @interface UIAlertAction (Common)
 + (UIAlertAction *)okAction;
 + (UIAlertAction *)okActionWithHandler:(void (^)(UIAlertAction *action))handler;

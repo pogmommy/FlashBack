@@ -114,6 +114,31 @@ NSString *backupNameSelected;
 														 alertControllerWithTitle:@"Restoring from backup"
 														 message:@"Your device will respring when the process is completed."
 														 preferredStyle:UIAlertControllerStyleAlert];
+
+			UIActivityIndicatorViewStyle indicatorStyle = UIActivityIndicatorViewStyleGray;
+			if (@available(iOS 13, *)) {
+				indicatorStyle = UIActivityIndicatorViewStyleMedium;
+			}
+			UIActivityIndicatorView *activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:indicatorStyle];
+			activityIndicator.translatesAutoresizingMaskIntoConstraints = NO;
+			[activityIndicator startAnimating];
+
+			finishedRestoreAlert.contentViewController = [[UIViewController alloc] init];
+			[finishedRestoreAlert.contentViewController.view addSubview:activityIndicator];
+
+			[NSLayoutConstraint activateConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[activityIndicator]|"
+																																											options:kNilOptions
+																																											metrics:nil
+																																												views:@{
+																																														@"activityIndicator": activityIndicator
+																																												}]];
+			[NSLayoutConstraint activateConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[activityIndicator]|"
+																																											options:kNilOptions
+																																											metrics:nil
+																																												views:@{
+																																														@"activityIndicator": activityIndicator
+																																												}]];
+
 			[self presentViewController:finishedRestoreAlert animated:YES completion:nil];
 			
 			//RUN RESTORE SCRIPT
