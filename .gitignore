@@ -1,8 +1,13 @@
-/Users/aaron/Documents/GitHub/FlashBack/FlashBack/Assets.xcassets/.DS_Store
-FlashBack/.DS_Store
+# Crap
 .DS_Store
-FlashBack.xcodeproj/project.pbxproj
-FlashBack/.DS_Store
-FlashBack/Assets.xcassets/.DS_Store
+
+# Xcode
+*.pbxuser
+!default.pbxuser
+xcuserdata
+*.xccheckout
+*.xcuserstate
+
+# Theos
 .theos
-packages
+packages/
