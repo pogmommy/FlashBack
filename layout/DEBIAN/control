@@ -1,4 +1,4 @@
-Package: com.mpg13.FlashBack
+Package: com.mpg13.flashback
 Name: FlashBack
 Depends: mobilesubstrate,firmware (>= 12.0) | com.chpwn.iconsupport, firmware (<< 12.0) | com.ichitaso.iconanus,ldid
 Conflicts: com.mpg13.FlashBackfree
