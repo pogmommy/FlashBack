@@ -64,6 +64,7 @@ NSString *backupNameSelected;
 				
 				_backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/var/mobile/Library/FlashBack/Backups/" error:nil];
 				[self->selectedBackupPickerView reloadAllComponents];
+				self->noBackupsLabel.hidden = _backupFolderArray.count != 0;
 				
 				[finishedCreateAlert dismissViewControllerAnimated:YES completion:nil];
 				
@@ -229,6 +230,7 @@ NSString *backupNameSelected;
 				
 				_backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/var/mobile/Library/FlashBack/Backups/" error:nil];
 				[self->selectedBackupPickerView reloadAllComponents];
+				self->noBackupsLabel.hidden = _backupFolderArray.count != 0;
 			}];
 			[finishedUpdateAlert addAction:ok];
 			
@@ -336,6 +338,7 @@ NSString *backupNameSelected;
 			
 			_backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/var/mobile/Library/FlashBack/Backups/" error:nil];
 			[self->selectedBackupPickerView reloadAllComponents];
+			self->noBackupsLabel.hidden = _backupFolderArray.count != 0;
 			
 			[deleteFinishedAlert dismissViewControllerAnimated:YES completion:nil];
 			
@@ -363,6 +366,10 @@ NSString *backupNameSelected;
     [super viewDidLoad];
     
     if (@available(iOS 11.0, *)) {
+        if ([UIScreen mainScreen].bounds.size.height < 600) {
+            self.navigationController.navigationBar.prefersLargeTitles = NO;
+        }
+
         if (self.navigationController.navigationBar.prefersLargeTitles){
             UIButton *createBackupButton = [UIButton buttonWithType:UIButtonTypeSystem];
             [createBackupButton addTarget:self action:@selector(createBackup:) forControlEvents:UIControlEventTouchUpInside];
@@ -387,6 +394,7 @@ NSString *backupNameSelected;
     // MARK: List of Backups is found and added to this array
     //_backupFolderArray = @[@"one",@"two",@"three"];
     _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/var/mobile/Library/FlashBack/Backups/" error:nil];
+    self->noBackupsLabel.hidden = _backupFolderArray.count != 0;
     
 }
 
