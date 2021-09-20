@@ -13,7 +13,8 @@
     IBOutlet UILabel *selectedBackupText;
     IBOutlet UIImageView *selectedBackupImage;
     IBOutlet UIPickerView *selectedBackupPickerView;
-    
+    IBOutlet UILabel *noBackupsLabel;
+
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *FlashBackTitle;
