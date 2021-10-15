@@ -406,7 +406,7 @@ NSString *backupNameSelected;
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-	if (_backupFolderArray == nil) return;
+	if (_backupFolderArray == nil || _backupFolderArray.count == 0) return;
 	
 	backupNameSelected = [_backupFolderArray objectAtIndex:row];
 	selectedBackupText.text=backupNameSelected;
