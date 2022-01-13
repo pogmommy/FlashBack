@@ -66,7 +66,7 @@
 }
 
 -(void)micahTwitterProfile{
-    [[UIApplication sharedApplication] openURL:[InfoTableViewController openTwitterProfile:@"MicahPGomez"]];
+    [[UIApplication sharedApplication] openURL:[InfoTableViewController openTwitterProfile:@"pogmommy"]];
 }
     
 -(void)aaronTwitterProfile{

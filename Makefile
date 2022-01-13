@@ -1,3 +1,5 @@
+INSTALL_TARGET_PROCESSES = FlashBack
+
 include $(THEOS)/makefiles/common.mk
 
 XCODEPROJ_NAME = FlashBack

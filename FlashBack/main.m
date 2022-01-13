@@ -7,7 +7,7 @@
 
 // Special thanks to PsychoTea (@IBSparkles) for getting root on kernel patch jailbreaks, as well as for both Electra's and Meridian's "kppless" jailbreakd daemon.
 
-void platformize_me() {
+void platformize_me(void) {
     void* handle = dlopen("/usr/lib/libjailbreak.dylib", RTLD_LAZY);
     if (!handle) return;
     
@@ -22,7 +22,7 @@ void platformize_me() {
     ptr(getpid(), FLAG_PLATFORMIZE);
 }
 
-void patch_setuid() {
+void patch_setuid(void) {
     void* handle = dlopen("/usr/lib/libjailbreak.dylib", RTLD_LAZY);
     if (!handle)
         return;

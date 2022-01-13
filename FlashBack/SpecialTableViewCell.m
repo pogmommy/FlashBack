@@ -16,11 +16,20 @@
 
     self.backgroundColor = [UIColor clearColor];
     
-    UIView *selectionView = [[UIView alloc] init];
-    selectionView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.1];
-    self.selectedBackgroundView = selectionView;
+    if (@available(iOS 13, *)) {
+    } else {
+        UIView *selectionView = [[UIView alloc] init];
+        selectionView.backgroundColor = [UIColor colorWithWhite:1 alpha:0.1];
+        self.selectedBackgroundView = selectionView;
+    }
     
-    UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
+    UIBlurEffect *blurEffect;
+    if (@available(iOS 13, *)) {
+        blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleSystemMaterial];
+    } else {
+        blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    }
+    UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
     blurView.userInteractionEnabled = NO;
     self.backgroundView = blurView;
 }

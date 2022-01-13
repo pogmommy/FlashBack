@@ -357,8 +357,11 @@ NSString *backupNameSelected;
 
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
-	
-	return UIStatusBarStyleLightContent;
+    if (@available(iOS 13, *)) {
+        return UIStatusBarStyleDefault;
+    } else {
+        return UIStatusBarStyleLightContent;
+    }
 }
 
 
@@ -395,14 +398,43 @@ NSString *backupNameSelected;
     //_backupFolderArray = @[@"one",@"two",@"three"];
     _backupFolderArray = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:@"/var/mobile/Library/FlashBack/Backups/" error:nil];
     self->noBackupsLabel.hidden = _backupFolderArray.count != 0;
+	[self pickerView:selectedBackupPickerView didSelectRow:0 inComponent:0];
     
 }
 
 - (void)viewDidLayoutSubviews {
 	[super viewDidLayoutSubviews];
 	
-	[[selectedBackupPickerView.subviews objectAtIndex:0] setBackgroundColor:[UIColor colorWithWhite:25.f/225.f alpha:0.5]];
-	[[selectedBackupPickerView.subviews objectAtIndex:1] setBackgroundColor:[UIColor colorWithWhite:25.f/225.f alpha:0.5]];
+    if (@available(iOS 13, *)) {
+    } else {
+        [[selectedBackupPickerView.subviews objectAtIndex:0] setBackgroundColor:[UIColor colorWithWhite:25.f/225.f alpha:0.5]];
+        [[selectedBackupPickerView.subviews objectAtIndex:1] setBackgroundColor:[UIColor colorWithWhite:25.f/225.f alpha:0.5]];
+    }
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self traitCollectionDidChange:nil];
+}
+
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    [super traitCollectionDidChange:previousTraitCollection];
+    
+    if (@available(iOS 12, *)) {
+        UIBackgroundStyle style;
+        switch (self.traitCollection.userInterfaceStyle) {
+            case UIUserInterfaceStyleDark:
+                style = UIBackgroundStyleExtraDarkBlur;
+                break;
+                
+            case UIUserInterfaceStyleLight:
+            case UIUserInterfaceStyleUnspecified:
+                style = UIBackgroundStyleBlur;
+                break;
+        }
+        [[UIApplication sharedApplication] _setBackgroundStyle:style];
+    }
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
@@ -435,7 +467,13 @@ NSString *backupNameSelected;
 
 - (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component {
 	NSString *name = _backupFolderArray[row];
-	return [[NSAttributedString alloc] initWithString:name attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor]}];
+    UIColor *color;
+    if (@available(iOS 13, *)) {
+        color = [UIColor labelColor];
+    } else {
+        color = [UIColor whiteColor];
+    }
+	return [[NSAttributedString alloc] initWithString:name attributes:@{NSForegroundColorAttributeName: color}];
 }
 @end
 

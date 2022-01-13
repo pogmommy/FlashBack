@@ -23,17 +23,18 @@
 	// Override point for customization after application launch.
     [application _setBackgroundStyle:UIBackgroundStyleExtraDarkBlur];
     
-    UIColor *barBackground = [UIColor colorWithWhite:0 alpha:0.3];
     if (@available(iOS 13.0, *)) {
         UIBarAppearance *barAppearance = [[UIBarAppearance alloc] init];
         [barAppearance configureWithDefaultBackground];
-        barAppearance.backgroundColor = barBackground;
+        barAppearance.backgroundEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleSystemMaterial];
+        barAppearance.backgroundColor = [UIColor colorNamed:@"Cell Background Transparent"];
         
         [UINavigationBar appearance].standardAppearance = [[UINavigationBarAppearance alloc] initWithBarAppearance:barAppearance];
         [UINavigationBar appearance].scrollEdgeAppearance = [UINavigationBar appearance].standardAppearance;
         
         [UITabBar appearance].standardAppearance = [[UITabBarAppearance alloc] initWithBarAppearance:barAppearance];
     } else {
+        UIColor *barBackground = [UIColor colorWithWhite:0 alpha:0.3];
         [UINavigationBar appearance].backgroundColor = barBackground;
         [UITabBar appearance].backgroundColor = barBackground;
     }

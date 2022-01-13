@@ -23,7 +23,13 @@
 }
 
 - (void)commonInit {
-    UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:[UIBlurEffect effectWithStyle:UIBlurEffectStyleDark]];
+    UIBlurEffect *blurEffect;
+    if (@available(iOS 13, *)) {
+        blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleSystemMaterial];
+    } else {
+        blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleDark];
+    }
+    UIVisualEffectView *blurView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
     blurView.userInteractionEnabled = NO;
     blurView.clipsToBounds = YES;
     blurView.layer.cornerRadius = 15;
