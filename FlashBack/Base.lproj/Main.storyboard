@@ -212,7 +212,7 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Help" footerTitle="FlashBack 4.0.2" id="t2d-l1-hUX">
+                            <tableViewSection headerTitle="Help" footerTitle="FlashBack 4.1" id="t2d-l1-hUX">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="pxO-QB-H9D" customClass="SpecialTableViewCell">
                                         <rect key="frame" x="20" y="417.5" width="374" height="111.5"/>
